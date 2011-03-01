@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -650,7 +650,7 @@ CArch::time()
 	return m_time->time();
 }
 
-bool 
+bool
 CArch::parseArg(const int& argc, const char* const* argv, int& i)
 {
 	return m_appUtil->parseArg(argc, argv, i);
@@ -659,6 +659,7 @@ CArch::parseArg(const int& argc, const char* const* argv, int& i)
 void
 CArch::adoptApp(CApp* app)
 {
+    LOG((CLOG_INFO "CArch::adoptApp call"));
 	m_appUtil->adoptApp(app);
 }
 
@@ -671,6 +672,7 @@ CArch::app() const
 int
 CArch::run(int argc, char** argv)
 {
+    LOG((CLOG_INFO "CArch::run call"));
 	return m_appUtil->run(argc, argv);
 }
 

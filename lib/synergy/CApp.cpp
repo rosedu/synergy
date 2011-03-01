@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -100,11 +100,18 @@ CApp::isArg(
 bool
 CApp::parseArg(const int& argc, const char* const* argv, int& i)
 {
+    LOG((CLOG_INFO "CApp::parseArg call"));
+    LOG((CLOG_INFO "CARCH->parseArg("));
 	if (ARCH->parseArg(argc, argv, i)) {
 		// handled by platform util
 		return true;
 	}
-	
+
+    else if (isArg(i,argc,argv, "-hw", "--helloworld",1)) {
+        // custom common argument
+        std::cout<<"custom argument: "<<argv[++i]<<"\n";
+        m_bye(kExitArgs);
+    }
 	else if (isArg(i, argc, argv, "-d", "--debug", 1)) {
 		// change logging level
 		argsBase().m_logFilter = argv[++i];
@@ -173,7 +180,7 @@ CApp::parseArgs(int argc, const char* const* argv, int& i)
 	// did not return on failure. however, this warning does not appear to show
 	// any more (could be because new compiler args have been added).
 	// the asserts are programmer benefit only; the os should never pass 0 args,
-	// because the first is always the binary name. the only way assert would 
+	// because the first is always the binary name. the only way assert would
 	// evaluate to true, is if this parse function were implemented incorrectly,
 	// which is unlikely because it's old code and has a specific use.
 	// we should avoid using anything other than assert here, because it will
@@ -182,9 +189,10 @@ CApp::parseArgs(int argc, const char* const* argv, int& i)
 	assert(argv != NULL);
 	assert(argc >= 1);
 
+
 	// set defaults
 	argsBase().m_name = ARCH->getHostName();
-
+    LOG((CLOG_INFO "CApp::parseArgs call"));
 	// parse options
 	for (i = 1; i < argc; ++i) {
 
@@ -210,13 +218,13 @@ CApp::parseArgs(int argc, const char* const* argv, int& i)
 	}
 
 #if SYSAPI_WIN32
-	// suggest that user installs as a windows service. when launched as 
+	// suggest that user installs as a windows service. when launched as
 	// service, process should automatically detect that it should run in
 	// daemon mode.
 	if (argsBase().m_daemon) {
-		LOG((CLOG_ERR 
+		LOG((CLOG_ERR
 			"The --daemon argument is not supported on Windows. "
-			"Instead, install %s as a service (--service install).", 
+			"Instead, install %s as a service (--service install).",
 			argsBase().m_pname));
 		m_bye(kExitArgs);
 	}
@@ -249,13 +257,13 @@ CApp::run(int argc, char** argv)
 #endif
 
 	CArch arch;
-
+    LOG((CLOG_INFO "CApp::run call"));
 	// install application in to arch
 	ARCH->adoptApp(this);
 
 	// create an instance of log
 	CLOG;
-	
+
 	// HACK: fail by default (saves us setting result in each catch)
 	int result = kExitFailed;
 
@@ -264,7 +272,7 @@ CApp::run(int argc, char** argv)
 	}
 	catch (XExitApp& e) {
 		// instead of showing a nasty error, just exit with the error code.
-		// not sure if i like this behaviour, but it's probably better than 
+		// not sure if i like this behaviour, but it's probably better than
 		// using the exit(int) function!
 		result = e.getCode();
 	}
@@ -284,7 +292,7 @@ CApp::run(int argc, char** argv)
 	delete CLOG;
 
 	ARCH->beforeAppExit();
-	
+
 	return result;
 }
 
@@ -299,7 +307,7 @@ CApp::daemonMainLoop(int, const char**)
 	return mainLoop();
 }
 
-void 
+void
 CApp::setupFileLogging()
 {
 	if (argsBase().m_logFile != NULL) {
@@ -309,20 +317,21 @@ CApp::setupFileLogging()
 	}
 }
 
-void 
+void
 CApp::loggingFilterWarning()
 {
 	if (CLOG->getFilter() > CLOG->getConsoleMaxLevel()) {
 		if (argsBase().m_logFile == NULL) {
-			LOG((CLOG_WARN "log messages above %s are NOT sent to console (use file logging)", 
+			LOG((CLOG_WARN "log messages above %s are NOT sent to console (use file logging)",
 				CLOG->getFilterName(CLOG->getConsoleMaxLevel())));
 		}
 	}
 }
 
-void 
+void
 CApp::initApp(int argc, const char** argv)
 {
+    LOG ((CLOG_INFO "CApp::initApp call"));
 	// parse command line
 	parseArgs(argc, argv);
 

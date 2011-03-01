@@ -33,6 +33,7 @@ CMSWindowsClipboard::CMSWindowsClipboard(HWND window) :
 	m_window(window),
 	m_time(0)
 {
+	//LOG(CLOG )
 	// add converters, most desired first
 	m_converters.push_back(new CMSWindowsClipboardUTF16Converter);
 	if (CArchMiscWindows::isWindows95Family()) {
