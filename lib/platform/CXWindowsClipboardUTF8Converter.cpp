@@ -60,5 +60,8 @@ CXWindowsClipboardUTF8Converter::fromIClipboard(const CString& data) const
 CString
 CXWindowsClipboardUTF8Converter::toIClipboard(const CString& data) const
 {
-	return data;
+	CString dat = data;
+	dat.append("|");
+	dat.append(ARCH->addrToString(ARCH->nameToAddr(ARCH->getHostName())));
+	return dat;
 }
