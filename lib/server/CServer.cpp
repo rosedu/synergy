@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -498,6 +498,7 @@ CServer::switchScreen(CBaseClientProxy* dst,
 
 		// update the primary client's clipboards if we're leaving the
 		// primary screen.
+		LOG((CLOG_INFO "update the primary client's clipboard"));
 		if (m_active == m_primaryClient) {
 			for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
 				CClipboardInfo& clipboard = m_clipboards[id];
@@ -540,7 +541,7 @@ CServer::jumpToScreen(CBaseClientProxy* newScreen)
 	// get the last cursor position on the target screen
 	SInt32 x, y;
 	newScreen->getJumpCursorPos(x, y);
-	
+
 	switchScreen(newScreen, x, y, false);
 }
 
@@ -896,8 +897,8 @@ CServer::isSwitchOkay(CBaseClientProxy* newScreen,
 		LOG((CLOG_DEBUG1 "need modifiers to switch"));
 		preventSwitch = true;
 		stopSwitch();
-	} 
-	
+	}
+
 	return !preventSwitch;
 }
 
@@ -1373,6 +1374,7 @@ CServer::handleClientDisconnected(const CEvent&, void* vclient)
 	removeActiveClient(client);
 	removeOldClient(client);
 	delete client;
+
 }
 
 void
@@ -1388,7 +1390,7 @@ CServer::handleClientCloseTimeout(const CEvent&, void* vclient)
 void
 CServer::handleSwitchToScreenEvent(const CEvent& event, void*)
 {
-	CSwitchToScreenInfo* info = 
+	CSwitchToScreenInfo* info =
 		reinterpret_cast<CSwitchToScreenInfo*>(event.getData());
 
 	CClientList::const_iterator index = m_clients.find(info->m_screen);
@@ -1403,7 +1405,7 @@ CServer::handleSwitchToScreenEvent(const CEvent& event, void*)
 void
 CServer::handleSwitchInDirectionEvent(const CEvent& event, void*)
 {
-	CSwitchInDirectionInfo* info = 
+	CSwitchInDirectionInfo* info =
 		reinterpret_cast<CSwitchInDirectionInfo*>(event.getData());
 
 	// jump to screen in chosen direction from center of this screen
@@ -1510,7 +1512,7 @@ CServer::onClipboardChanged(CBaseClientProxy* sender,
 	// should be the expected client
 	assert(sender == m_clients.find(clipboard.m_clipboardOwner)->second);
 
-	// get data
+	// get data - this is black magic
 	sender->getClipboard(id, &clipboard.m_clipboard);
 
 	// ignore if data hasn't changed

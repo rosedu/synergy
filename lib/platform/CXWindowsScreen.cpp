@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -108,7 +108,7 @@ CXWindowsScreen::CXWindowsScreen(const char* displayName, bool isPrimary, bool d
 
 	if (mouseScrollDelta==0) m_mouseScrollDelta=120;
 	s_screen = this;
-	
+
 	if (!disableXInitThreads) {
 	  // initializes Xlib support for concurrent threads.
 	  if (XInitThreads() == 0)
@@ -266,14 +266,14 @@ CXWindowsScreen::enter()
 			DPMSForceLevel(m_display, DPMSModeOn);
 	}
 	#endif
-	
+
 	// unmap the hider/grab window.  this also ungrabs the mouse and
 	// keyboard if they're grabbed.
 	XUnmapWindow(m_display, m_window);
 
 /* maybe call this if entering for the screensaver
 	// set keyboard focus to root window.  the screensaver should then
-	// pick up key events for when the user enters a password to unlock. 
+	// pick up key events for when the user enters a password to unlock.
 	XSetInputFocus(m_display, PointerRoot, PointerRoot, CurrentTime);
 */
 
@@ -713,7 +713,7 @@ CXWindowsScreen::registerHotKey(KeyID key, KeyModifierMask mask)
 		LOG((CLOG_WARN "failed to register hotkey %s (id=%04x mask=%04x)", CKeyMap::formatKey(key, mask).c_str(), key, mask));
 		return 0;
 	}
-	
+
 	LOG((CLOG_DEBUG "registered hotkey %s (id=%04x mask=%04x) as id=%d", CKeyMap::formatKey(key, mask).c_str(), key, mask, id));
 	return id;
 }
@@ -1596,6 +1596,7 @@ CXWindowsScreen::processClipboardRequest(Window requestor,
 	for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
 		if (m_clipboard[id] != NULL &&
 			m_clipboard[id]->processRequest(requestor, time, property)) {
+            LOG((CLOG_INFO "CXWindowsScreen::processClipboardRequest:\nAtom: %i\nId: %i\n", property, id ));
 			break;
 		}
 	}
