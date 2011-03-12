@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -59,6 +59,7 @@ public:
 		kText,			//!< Text format, UTF-8, newline is LF
 		kBitmap,		//!< Bitmap format, BMP 24/32bpp, BI_RGB
 		kHTML,			//!< HTML format, HTML fragment, UTF-8, newline is LF
+		kFilePath,
 		kNumFormats		//!< The number of clipboard formats
 	};
 
