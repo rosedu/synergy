@@ -191,6 +191,7 @@ public:
 	virtual CApp& app() const;
 	virtual int run(int argc, char** argv);
 	virtual void beforeAppExit();
+	virtual CString getName();
 
 	// expose util so we don't need to re-implement all the functions
 	IArchAppUtil& util() const { return *m_appUtil; }

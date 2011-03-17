@@ -68,6 +68,7 @@ private:
 	Time				m_timeOwned;
 	bool				m_added[kNumFormats];
 	CString				m_data[kNumFormats];
+	CString				m_origin;
 };
 
 #endif

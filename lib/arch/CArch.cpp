@@ -681,3 +681,10 @@ CArch::beforeAppExit()
 {
 	m_appUtil->beforeAppExit();
 }
+
+CString
+CArch::getName()
+{
+	return m_appUtil->getName();
+}
+

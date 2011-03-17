@@ -57,3 +57,10 @@ CArchAppUtil::instance()
 	assert(s_instance != nullptr);
 	return *s_instance;
 }
+
+CString
+CArchAppUtil::getName()
+{
+	return m_app->argsBase().m_name;
+}
+

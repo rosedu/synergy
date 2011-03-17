@@ -24,6 +24,7 @@
 #include "stdlist.h"
 #include "stdvector.h"
 #include "CArch.h"
+
 #if X_DISPLAY_MISSING
 #	error X11 is required to build synergy
 #else

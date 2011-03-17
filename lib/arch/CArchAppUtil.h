@@ -34,6 +34,8 @@ public:
 	static void exitAppStatic(int code) { instance().exitApp(code); }
 	virtual void beforeAppExit() {}
 	
+	CString getName();
+
 private:
 	CApp* m_app;
 	static CArchAppUtil* s_instance;

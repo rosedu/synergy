@@ -14,7 +14,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #include "CXWindowsClipboardUTF8Converter.h"
 
 //
@@ -61,7 +60,9 @@ CString
 CXWindowsClipboardUTF8Converter::toIClipboard(const CString& data) const
 {
 	CString dat = data;
+
 	dat.append("|");
-	dat.append(ARCH->addrToString(ARCH->nameToAddr(ARCH->getHostName())));
+	dat.append(ARCH->getName());
 	return dat;
+
 }
