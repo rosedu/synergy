@@ -163,10 +163,7 @@ CApp::parseArg(const int& argc, const char* const* argv, int& i)
 		version();
 		m_bye(kExitSuccess);
 	}
-	else if (isArg(i, argc, argv, "-p", "--ping")) {
-			std::cout<<"pong\n";
-			m_bye(kExitSuccess);
-	}
+
 	else {
 		// option not supported here
 		return false;
