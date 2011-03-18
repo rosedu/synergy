@@ -63,7 +63,7 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 								"_MOTIF_CLIP_LOCK_ACCESS_VALID", False);
     m_atomFilePath        = XInternAtom(m_display, "x-special/gnome-copied-files", False);
 	m_atomGDKSelection    = XInternAtom(m_display, "GDK_SELECTION", False);
-    m_atomString          = XInternAtom(m_display, "STRING", False);
+
 	// set selection atom based on clipboard id
 	switch (id) {
 	case kClipboardClipboard:
@@ -95,7 +95,8 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
     m_converters.push_back(new CXWindowsClipboardFilePathConverter(m_display,
                                 "x-special/gnome-copied-files"));
     m_converters.push_back(new CXWindowsClipboardFilePathConverter(m_display,
-                                "STRING"));
+                                "text/uri-list"));
+
 	// we have no data
 	clearCache();
 }
