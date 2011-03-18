@@ -19,7 +19,7 @@
 #define CXWINDOWSCLIPBOARDFILEPATHCONVERTER_H
 #include "CUnicode.h"
 #include "CXWindowsClipboard.h"
-
+#include "CLog.h"
 //! Convert to/from locale FilePath encoding
 class CXWindowsClipboardFilePathConverter : public IXWindowsClipboardConverter {
 public:
@@ -45,7 +45,7 @@ CXWindowsClipboardFilePathConverter::CXWindowsClipboardFilePathConverter(
 				Display* display, const char* name) :
 	m_atom(XInternAtom(display, name, False))
 {
-    m_atom = (Atom) 474;
+    LOG(( CLOG_INFO "CXWindowsClipboardFilePathConverter::Constructor\nAtom: %i", m_atom));
 	// do nothing
 }
 
