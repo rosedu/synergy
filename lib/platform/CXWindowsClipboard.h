@@ -327,6 +327,7 @@ private:
 	Atom				m_atomMotifClipAccess;
 	Atom				m_atomGDKSelection;
 	Atom                m_atomFilePath;
+	Atom                m_atomString;
 };
 
 //! Clipboard format converter interface
