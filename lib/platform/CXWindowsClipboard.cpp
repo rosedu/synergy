@@ -61,7 +61,7 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 	m_atomMotifClipHeader = XInternAtom(m_display, "_MOTIF_CLIP_HEADER", False);
 	m_atomMotifClipAccess = XInternAtom(m_display,
 								"_MOTIF_CLIP_LOCK_ACCESS_VALID", False);
-    m_atomFilePath        = XInternAtom(m_display, "x-special/gnome-copied-files", False);;
+    m_atomFilePath        = XInternAtom(m_display, "x-special/gnome-copied-files", False);
 	m_atomGDKSelection    = XInternAtom(m_display, "GDK_SELECTION", False);
 
 	// set selection atom based on clipboard id
@@ -166,6 +166,10 @@ CXWindowsClipboard::addSimpleRequest(Window requestor,
 	if (property == None) {
 		property = target;
 	}
+    if( target == XInternAtom(m_display, "x-special/gnome-copied-files", False))
+    {
+        LOG((CLOG_INFO "Paste event BITCHES.\n"));
+    }
 
 	// handle targets
 	CString data;
