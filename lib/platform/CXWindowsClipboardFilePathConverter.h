@@ -21,13 +21,13 @@
 #include "CXWindowsClipboard.h"
 #include "CLog.h"
 //! Convert to/from locale FilePath encoding
-class CXWindowsClipboardFilePathConverter : public IXWindowsClipboardConverter {
+class CXWindowsClipboardGnomeFilePathConverter : public IXWindowsClipboardConverter {
 public:
 	/*!
 	\c name is converted to an atom and that is reported by getAtom().
 	*/
-	CXWindowsClipboardFilePathConverter(Display* display, const char* name);
-	virtual ~CXWindowsClipboardFilePathConverter();
+	CXWindowsClipboardGnomeFilePathConverter(Display* display, const char* name);
+	virtual ~CXWindowsClipboardGnomeFilePathConverter();
 
 	// IXWindowsClipboardConverter overrides
 	virtual IClipboard::EFormat
@@ -41,61 +41,130 @@ private:
 	Atom				m_atom;
 };
 
-CXWindowsClipboardFilePathConverter::CXWindowsClipboardFilePathConverter(
+CXWindowsClipboardGnomeFilePathConverter::CXWindowsClipboardGnomeFilePathConverter(
 				Display* display, const char* name) :
 	m_atom(XInternAtom(display, name, False))
 {
-    LOG(( CLOG_INFO "CXWindowsClipboardFilePathConverter::Constructor\nAtom: %i", m_atom));
+    LOG(( CLOG_INFO "CXWindowsClipboardGnomeFilePathConverter::Constructor\nAtom: %i", m_atom));
 	// do nothing
 }
 
-CXWindowsClipboardFilePathConverter::~CXWindowsClipboardFilePathConverter()
+CXWindowsClipboardGnomeFilePathConverter::~CXWindowsClipboardGnomeFilePathConverter()
 {
 	// do nothing
 }
 
 IClipboard::EFormat
-CXWindowsClipboardFilePathConverter::getFormat() const
+CXWindowsClipboardGnomeFilePathConverter::getFormat() const
 {
 	return IClipboard::kFilePath;
 }
 
 Atom
-CXWindowsClipboardFilePathConverter::getAtom() const
+CXWindowsClipboardGnomeFilePathConverter::getAtom() const
 {
 	return m_atom;
 }
 
 int
-CXWindowsClipboardFilePathConverter::getDataSize() const
+CXWindowsClipboardGnomeFilePathConverter::getDataSize() const
 {
 	return 8;
 }
 
 CString
-CXWindowsClipboardFilePathConverter::fromIClipboard(const CString& data) const
+CXWindowsClipboardGnomeFilePathConverter::fromIClipboard(const CString& data) const
 {
-	return CUnicode::UTF8ToText(data);
+    LOG((CLOG_INFO "Converting  %s to gnome filepath", data.c_str()));
+	CString buffer;
+	buffer.append("copy\nfile://");
+    size_t pos = data.find(":");
+    buffer.append(data.substr(pos+1, data.size()-pos-1));
+    LOG((CLOG_INFO "Converted string: %s", buffer.c_str()));
+	return buffer;
 }
 
 CString
-CXWindowsClipboardFilePathConverter::toIClipboard(const CString& data) const
+CXWindowsClipboardGnomeFilePathConverter::toIClipboard(const CString& data) const
 {
 	// convert to UTF-8
-	bool errors;
-	CString utf8 = CUnicode::textToUTF8(data, &errors);
-
-	// if there were decoding errors then, to support old applications
-	// that don't understand UTF-8 but can report the exact binary
-	// UTF-8 representation, see if the data appears to be UTF-8.  if
-	// so then use it as is.
-	if (errors && CUnicode::isUTF8(data)) {
-		return data;
-	}
-
-	return utf8;
+	LOG((CLOG_INFO "Converting %s to common filepath format", data.c_str()));
+	CString buffer;
+	buffer.append(ARCH->getName());
+	buffer+=":";
+	buffer.append( data.substr(12, data.size()-12) );
+	LOG((CLOG_INFO "Converted string: %s", buffer.c_str()));
+	return buffer;
 }
 
+//KDE
+class CXWindowsClipboardKdeFilePathConverter : public IXWindowsClipboardConverter {
+public:
+	/*!
+	\c name is converted to an atom and that is reported by getAtom().
+	*/
+	CXWindowsClipboardKdeFilePathConverter(Display* display, const char* name);
+	virtual ~CXWindowsClipboardKdeFilePathConverter();
+
+	// IXWindowsClipboardConverter overrides
+	virtual IClipboard::EFormat
+						getFormat() const;
+	virtual Atom		getAtom() const;
+	virtual int			getDataSize() const;
+	virtual CString		fromIClipboard(const CString&) const;
+	virtual CString		toIClipboard(const CString&) const;
+
+private:
+	Atom				m_atom;
+};
+
+CXWindowsClipboardKdeFilePathConverter::CXWindowsClipboardKdeFilePathConverter(
+				Display* display, const char* name) :
+	m_atom(XInternAtom(display, name, False))
+{
+    LOG(( CLOG_INFO "CXWindowsClipboardKdeFilePathConverter::Constructor\nAtom: %i", m_atom));
+	// do nothing
+}
+
+CXWindowsClipboardKdeFilePathConverter::~CXWindowsClipboardKdeFilePathConverter()
+{
+	// do nothing
+}
+
+IClipboard::EFormat
+CXWindowsClipboardKdeFilePathConverter::getFormat() const
+{
+	return IClipboard::kFilePath;
+}
+
+Atom
+CXWindowsClipboardKdeFilePathConverter::getAtom() const
+{
+	return m_atom;
+}
+
+int
+CXWindowsClipboardKdeFilePathConverter::getDataSize() const
+{
+	return 8;
+}
+
+CString
+CXWindowsClipboardKdeFilePathConverter::fromIClipboard(const CString& data) const
+{
+    CString buffer;
+
+    return buffer;
+}
+
+CString
+CXWindowsClipboardKdeFilePathConverter::toIClipboard(const CString& data) const
+{
+    CString buffer = data;
+    LOG((CLOG_INFO "Converting %s to common filepath format", data.c_str()));
+    LOG((CLOG_INFO "Converted data: %s", buffer.c_str()));
+    return buffer;
+}
 
 
 #endif

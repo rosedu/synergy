@@ -92,10 +92,11 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 								"text/plain"));
 	m_converters.push_back(new CXWindowsClipboardTextConverter(m_display,
 								"STRING"));
-    m_converters.push_back(new CXWindowsClipboardFilePathConverter(m_display,
-                                "x-special/gnome-copied-files"));
-    m_converters.push_back(new CXWindowsClipboardFilePathConverter(m_display,
+    m_converters.push_back(new CXWindowsClipboardKdeFilePathConverter(m_display,
                                 "text/uri-list"));
+   m_converters.push_back(new CXWindowsClipboardGnomeFilePathConverter(m_display,
+                                "x-special/gnome-copied-files"));
+
 
 	// we have no data
 	clearCache();
