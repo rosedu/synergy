@@ -152,16 +152,23 @@ CXWindowsClipboardKdeFilePathConverter::getDataSize() const
 CString
 CXWindowsClipboardKdeFilePathConverter::fromIClipboard(const CString& data) const
 {
+    LOG((CLOG_INFO "Converting  %s to uri/file-list filepath", data.c_str()));
     CString buffer;
-
+    buffer.append("file://");
+    size_t pos = data.find(":");
+    buffer.append(data.substr(pos+1, data.size()-pos-1));
+    LOG((CLOG_INFO "Converted string: %s", buffer.c_str()));
     return buffer;
 }
 
 CString
 CXWindowsClipboardKdeFilePathConverter::toIClipboard(const CString& data) const
 {
-    CString buffer = data;
+    CString buffer;
     LOG((CLOG_INFO "Converting %s to common filepath format", data.c_str()));
+    buffer.append(ARCH->getName());
+	buffer+=":";
+	buffer.append(data.substr(7,data.size()-7));
     LOG((CLOG_INFO "Converted data: %s", buffer.c_str()));
     return buffer;
 }
