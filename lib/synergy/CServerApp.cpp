@@ -260,6 +260,7 @@ CServerApp::loadConfig()
 		LOG((CLOG_PRINT "%s: no configuration available", args().m_pname));
 		m_bye(kExitConfig);
 	}
+
 }
 
 bool
@@ -278,7 +279,9 @@ CServerApp::loadConfig(const CString& pathname)
 			return false;
 		}
 		configStream >> *args().m_config;
-		LOG((CLOG_DEBUG "configuration read successfully"));
+		CConfig::CScreenMounts* mounts = (*args().m_config).getMounts("dexter","tudalex-laptop");
+
+		LOG((CLOG_INFO "configuration read successfully"));
 		return true;
 	}
 	catch (XConfigRead& e) {

@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -544,6 +544,19 @@ CConfig::getOptions(const CString& name) const
 	return options;
 }
 
+
+CConfig::CScreenMounts*
+CConfig::getMounts(const CString& SourceScreen, const CString& DestScreen)
+{
+    CCellMap:: iterator index = m_map.find(getCanonicalName(SourceScreen));
+	if (index == m_map.end()) {
+		return NULL;
+	}
+
+    return  &(index->second.m_mounts[getCanonicalName(DestScreen)]);
+}
+
+
 bool
 CConfig::hasLockToScreenAction() const
 {
@@ -650,6 +663,7 @@ CConfig::readSection(CConfigReadContext& s)
 	static const char s_screens[] = "screens";
 	static const char s_links[]   = "links";
 	static const char s_aliases[] = "aliases";
+	static const char s_mounts[]  = "mounts";
 
 	CString line;
 	if (!s.readLine(line)) {
@@ -685,6 +699,9 @@ CConfig::readSection(CConfigReadContext& s)
 	}
 	else if (name == s_aliases) {
 		readSectionAliases(s);
+	}
+	else if (name == s_mounts) {
+        readSectionMounts(s);
 	}
 	else {
 		throw XConfigRead(s, "unknown section name \"%{1}\"", name);
@@ -1030,7 +1047,69 @@ CConfig::readSectionAliases(CConfigReadContext& s)
 	}
 	throw XConfigRead(s, "unexpected end of aliases section");
 }
+// wtf include
+#include <iostream>
+void
+CConfig::readSectionMounts(CConfigReadContext& s)
+{
+        CString line;
+        CString SourceScreen;
+        CString DestScreen;
+        CString screen;
 
+        while (s.readLine(line)) {
+            // check for end of section
+            if (line == "end") {
+                return;
+            }
+            std::cout<<line<<"\n";
+            // see if it's the next screen
+            if (line[line.size() - 1] == ':') {
+                screen = line.substr(0, line.size() - 1);
+                 // verify we know about the screen
+                if (!isScreen(screen)) {
+				throw XConfigRead(s, "unknown screen name \"%{1}\"", screen);
+                }
+                if (!isCanonicalName(screen)) {
+                    throw XConfigRead(s, "cannot use screen name alias here");
+                }
+
+                if(SourceScreen.empty()) {
+                       SourceScreen = screen;
+                }
+                else if (DestScreen.empty()) {
+                    DestScreen = screen;
+                }
+                else {
+                    SourceScreen = screen;
+                    DestScreen.clear();
+                }
+            }
+            else if (screen.empty()) {
+                throw XConfigRead(s, "argument before first screen");
+            }
+            else {
+                if(SourceScreen.empty() || DestScreen.empty()) {
+                throw XConfigRead(s, "missing screen name.");
+                }
+                CString::size_type i = 0;
+                CString SourcePrefix, DestPrefix;
+                CConfigReadContext::ArgList dummy;
+                s.parseNameWithArgs("SourcePrefix", line, "=",i, SourcePrefix, dummy);
+                ++i;
+                s.parseNameWithArgs("DestPrefix", line ,"", i, DestPrefix, dummy);
+                // TO DO: check if the filepaths are valid
+                CCellMap::iterator index = m_map.find(getCanonicalName(SourceScreen));
+                if (index == m_map.end()) {
+                    throw XConfigRead(s, "Could not find source screen.");
+                }
+
+                index->second.m_mounts[DestScreen][SourcePrefix] = DestPrefix;
+            }
+
+        }
+        throw XConfigRead(s, "unexpected end of mounts section");
+}
 
 CInputFilter::CCondition*
 CConfig::parseCondition(CConfigReadContext& s,
@@ -1780,7 +1859,7 @@ operator<<(std::ostream& s, const CConfig& config)
 
 		for (CConfig::link_const_iterator
 				link = config.beginNeighbor(*screen),
-				nend = config.endNeighbor(*screen); link != nend; ++link) {			
+				nend = config.endNeighbor(*screen); link != nend; ++link) {
 			s << "\t\t" << CConfig::dirName(link->first.getSide()) <<
 				CConfig::formatInterval(link->first.getInterval()) <<
 				" = " << link->second.getName().c_str() <<

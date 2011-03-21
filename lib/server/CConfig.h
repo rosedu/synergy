@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -56,6 +56,7 @@ namespace and must be unique.
 class CConfig {
 public:
 	typedef std::map<OptionID, OptionValue> CScreenOptions;
+	typedef std::map<CString,  CString> CScreenMounts;
 	typedef std::pair<float, float> CInterval;
 
 	class CCellEdge {
@@ -113,7 +114,7 @@ private:
 
 	public:
 		typedef CEdgeLinks::const_iterator const_iterator;
-
+        typedef std::map<CString, CScreenMounts > CScreenMountsMap;
 		bool			add(const CCellEdge& src, const CCellEdge& dst);
 		void			remove(EDirection side);
 		void			remove(EDirection side, float position);
@@ -135,8 +136,10 @@ private:
 	private:
 		CEdgeLinks		m_neighbors;
 
+
 	public:
 		CScreenOptions	m_options;
+		CScreenMountsMap        m_mounts;
 	};
 	typedef std::map<CString, CCell, CStringUtil::CaselessCmp> CCellMap;
 	typedef std::map<CString, CString, CStringUtil::CaselessCmp> CNameMap;
@@ -394,6 +397,8 @@ public:
 	*/
 	const CScreenOptions* getOptions(const CString& name) const;
 
+    CScreenMounts* getMounts(const CString& SourceScreen, const CString& DestScreen);
+
 	//! Check for lock to screen action
 	/*!
 	Returns \c true if this configuration has a lock to screen action.
@@ -445,6 +450,7 @@ private:
 	void				readSectionScreens(CConfigReadContext&);
 	void				readSectionLinks(CConfigReadContext&);
 	void				readSectionAliases(CConfigReadContext&);
+	void                readSectionMounts(CConfigReadContext&);
 
 	CInputFilter::CCondition*
 						parseCondition(CConfigReadContext&,
