@@ -20,6 +20,7 @@
 #include "CMSWindowsClipboardUTF16Converter.h"
 #include "CMSWindowsClipboardBitmapConverter.h"
 #include "CMSWindowsClipboardHTMLConverter.h"
+#include "CMSWindowsClipboardFilePathConverter.h"
 #include "CLog.h"
 #include "CArchMiscWindows.h"
 
@@ -35,6 +36,7 @@ CMSWindowsClipboard::CMSWindowsClipboard(HWND window) :
 {
 	//LOG(CLOG )
 	// add converters, most desired first
+	m_converters.push_back(new CMSWindowsClipboardFilePathConverter);
 	m_converters.push_back(new CMSWindowsClipboardUTF16Converter);
 	if (CArchMiscWindows::isWindows95Family()) {
 		// windows nt family converts to/from unicode automatically.
@@ -96,6 +98,7 @@ CMSWindowsClipboard::add(EFormat format, const CString& data)
 				if (SetClipboardData(win32Format, win32Data) == NULL) {
 					// free converted data if we couldn't put it on
 					// the clipboard
+					LOG ((CLOG_INFO "we couldn't add data for win format %d\n", win32Format));
 					GlobalFree(win32Data);
 				}
 			}

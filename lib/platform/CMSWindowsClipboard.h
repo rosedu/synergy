@@ -22,6 +22,10 @@
 #include "stdvector.h"
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <ShellAPI.h>
+#include <ShlObj.h>
+#include <Shlwapi.h>
+#include <ShlDisp.h>
 
 class IMSWindowsClipboardConverter;
 
