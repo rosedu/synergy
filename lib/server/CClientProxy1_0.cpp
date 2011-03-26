@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -228,7 +228,12 @@ CClientProxy1_0::handleFlatline(const CEvent&, void*)
 bool
 CClientProxy1_0::getClipboard(ClipboardID id, IClipboard* clipboard) const
 {
+    LOG((CLOG_INFO "CClientProxy1_0::getClipboard call"));
+    m_clipboard[id].m_clipboard.open(0);
+        LOG((CLOG_INFO "Clipboard content: %s", m_clipboard[id].m_clipboard.get(IClipboard::kFilePath).c_str() ));
+		m_clipboard[id].m_clipboard.close();
 	CClipboard::copy(clipboard, &m_clipboard[id].m_clipboard);
+
 	return true;
 }
 
@@ -267,7 +272,7 @@ CClientProxy1_0::leave()
 	// we can never prevent the user from leaving
 	return true;
 }
-
+extern CApp *s_instance;
 void
 CClientProxy1_0::setClipboard(ClipboardID id, const IClipboard* clipboard)
 {
@@ -277,8 +282,24 @@ CClientProxy1_0::setClipboard(ClipboardID id, const IClipboard* clipboard)
 		m_clipboard[id].m_dirty = false;
 		CClipboard::copy(&m_clipboard[id].m_clipboard, clipboard);
 
+
+
+/*
+		m_clipboard[id].m_clipboard.open(0);
+		if(m_clipboard[id].m_clipboard.has(IClipboard::kFilePath)) {
+            CString prefix, source;
+            CString content = m_clipboard[id].m_clipboard.get(IClipboard::kFilePath);
+            size_t pos = content.find(":");
+            source = content.substr(0,pos);
+
+
+
+        }
+		m_clipboard[id].m_clipboard.close();
+		*/
 		CString data = m_clipboard[id].m_clipboard.marshall();
-		LOG((CLOG_DEBUG "send clipboard %d to \"%s\" size=%d", id, getName().c_str(), data.size()));
+
+		LOG((CLOG_INFO "send clipboard %d to \"%s\" size=%d", id, getName().c_str(), data.size()));
 		CProtocolUtil::writef(getStream(), kMsgDClipboard, id, 0, &data);
 	}
 }

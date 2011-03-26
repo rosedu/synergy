@@ -1047,8 +1047,7 @@ CConfig::readSectionAliases(CConfigReadContext& s)
 	}
 	throw XConfigRead(s, "unexpected end of aliases section");
 }
-// wtf include
-#include <iostream>
+
 void
 CConfig::readSectionMounts(CConfigReadContext& s)
 {
@@ -1062,7 +1061,7 @@ CConfig::readSectionMounts(CConfigReadContext& s)
             if (line == "end") {
                 return;
             }
-            std::cout<<line<<"\n";
+
             // see if it's the next screen
             if (line[line.size() - 1] == ':') {
                 screen = line.substr(0, line.size() - 1);
