@@ -43,7 +43,7 @@ private:
 
 CXWindowsClipboardGnomeFilePathConverter::CXWindowsClipboardGnomeFilePathConverter(
 				Display* display, const char* name) :
-	m_atom(XInternAtom(display, name, False))
+	m_atom(XInternAtom(display, name, True))
 {
     LOG(( CLOG_INFO "CXWindowsClipboardGnomeFilePathConverter::Constructor\nAtom: %i", m_atom));
 	// do nothing
