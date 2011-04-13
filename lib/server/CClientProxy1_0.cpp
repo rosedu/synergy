@@ -23,6 +23,8 @@
 #include "IEventQueue.h"
 #include "TMethodEventJob.h"
 #include <cstring>
+#include "CArch.h"
+#include "CServerApp.h"
 
 //
 // CClientProxy1_0
@@ -272,8 +274,10 @@ CClientProxy1_0::leave()
 	// we can never prevent the user from leaving
 	return true;
 }
-extern CApp *s_instance;
+#include <iostream>
+typedef std::map<CString,  CString> CScreenMounts;
 void
+
 CClientProxy1_0::setClipboard(ClipboardID id, const IClipboard* clipboard)
 {
 	// ignore if this clipboard is already clean
@@ -283,25 +287,39 @@ CClientProxy1_0::setClipboard(ClipboardID id, const IClipboard* clipboard)
 		CClipboard::copy(&m_clipboard[id].m_clipboard, clipboard);
 
 
+	//std::cout<<(*((CServerApp*) &ARCH->app())->args().m_config->getMounts("dexter", "tudalex-laptop"))["/home/"];
 
-/*
 		m_clipboard[id].m_clipboard.open(0);
-		if(m_clipboard[id].m_clipboard.has(IClipboard::kFilePath)) {
-            CString prefix, source;
-            CString content = m_clipboard[id].m_clipboard.get(IClipboard::kFilePath);
-            size_t pos = content.find(":");
-            source = content.substr(0,pos);
+		if(m_clipboard[id].m_clipboard.has(IClipboard::kFilePath)) 
+		{
+			CString prefix, source;
+			CString content = m_clipboard[id].m_clipboard.get(IClipboard::kFilePath);
+			size_t pos = content.find(":");
+			source = content.substr(0,pos);
+			content = content.substr(pos+1, content.size());
+			CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, getName());
+			LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), content.c_str()));
 
-
-
-        }
+			for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
+			{
+				int p = content.find(it->first);
+				if( p != std::string::npos)
+				{
+					content = it->second + content.substr(p + it->first.size() );
+					m_clipboard[id].m_clipboard.add(IClipboard::kFilePath, content);
+					break;
+				}
+			}
+			LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), m_clipboard[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
+			
+		}	
+		
 		m_clipboard[id].m_clipboard.close();
-		*/
 		CString data = m_clipboard[id].m_clipboard.marshall();
-
 		LOG((CLOG_INFO "send clipboard %d to \"%s\" size=%d", id, getName().c_str(), data.size()));
 		CProtocolUtil::writef(getStream(), kMsgDClipboard, id, 0, &data);
 	}
+	
 }
 
 void
