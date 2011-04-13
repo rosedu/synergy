@@ -64,3 +64,5 @@ CArchAppUtil::getName()
 	return m_app->argsBase().m_name;
 }
 
+
+

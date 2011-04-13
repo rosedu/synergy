@@ -52,9 +52,8 @@ CMSWindowsClipboardFilePathConverter::fromIClipboard(const CString& data) const
 	HGLOBAL    hgDrop;
 	DROPFILES* pDrop;
 	UINT uBuffSize = uBuffSize = sizeof(DROPFILES) + sizeof(TCHAR) * (data.size() + 1);
-	hgDrop = GlobalAlloc ( GHND | GMEM_DDESHARE, uBuffSize );
-	UINT pos= data.find(":");
-    if ( NULL == hgDrop )
+	hgDrop = GlobalAlloc ( GHND | GMEM_DDESHARE | GMEM_ZEROINIT, uBuffSize );
+	if ( NULL == hgDrop )
 		return NULL;
 	// convert and add nul terminator
 	LOG((CLOG_INFO "recieved "" %s ""as a file path\n", data.c_str()));
@@ -66,10 +65,13 @@ CMSWindowsClipboardFilePathConverter::fromIClipboard(const CString& data) const
     }
 	pDrop->pFiles = sizeof(DROPFILES);
 	TCHAR* pszBuff = (TCHAR*)(LPBYTE(pDrop)+sizeof(DROPFILES));
-	//FIXME:Dirty hack of only appending C to it
-	lstrcpy(pszBuff, CString("C:").append(data.substr(pos+1,data.size()-pos-1)).c_str());
+	lstrcpy(pszBuff,data.c_str());
+	for (TCHAR * i = pszBuff; i < LPBYTE(pDrop)+uBuffSize; ++ i) //Passing through all the characters
+		if (*i == '\n') //Replacing the end of line character with null
+			*i = '\0';  //in order to create a double null terminated string list
+	
 	GlobalUnlock(hgDrop);
-	LOG((CLOG_INFO "converted it to "" %s ""\n",CString("C:").append(data.substr(pos+1,data.size()-pos-1)).c_str()));
+	LOG((CLOG_INFO "converted it to "" %s ""\n",data.c_str()));
 	return (HANDLE) hgDrop;
 }
 
@@ -85,8 +87,8 @@ CMSWindowsClipboardFilePathConverter::toIClipboard( HANDLE data) const
 	}
 	*/
 	CString buff;
-	buff.append(ARCH->getName());
-	buff.append(":");
+	buff.append(ARCH->app().argsBase().m_name);
+	buff.append("\n");
 
 	LOG ((CLOG_INFO "Have entered in the function"));
 	DROPFILES *stgm = (DROPFILES*)GlobalLock(data);
@@ -100,7 +102,7 @@ CMSWindowsClipboardFilePathConverter::toIClipboard( HANDLE data) const
 		  DragQueryFile((HDROP)stgm, i, szPath, MAX_PATH);
 		  LOG ((CLOG_INFO "File: %s\n", szPath));
 		  if (i > 0)
-			  buff.append(";");
+			  buff.append("\n");
 		  buff.append(szPath);
 	}
 	//LOG ((CLOG_INFO "First file: %s", (char *)(a+a->pFiles) ));

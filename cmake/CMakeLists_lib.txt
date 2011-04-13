@@ -213,6 +213,7 @@ SET(src_lib_platform_mswindows
 	${root_lib}/platform/CMSWindowsClipboardHTMLConverter.cpp
 	${root_lib}/platform/CMSWindowsClipboardTextConverter.cpp
 	${root_lib}/platform/CMSWindowsClipboardUTF16Converter.cpp
+	${root_lib}/platform/CMSWindowsClipboardFilePathConverter.cpp
 	${root_lib}/platform/CMSWindowsDesks.cpp
 	${root_lib}/platform/CMSWindowsEventQueueBuffer.cpp
 	${root_lib}/platform/CMSWindowsKeyState.cpp
@@ -229,6 +230,7 @@ SET(inc_lib_platform_mswindows
 	${root_lib}/platform/CMSWindowsClipboardHTMLConverter.h
 	${root_lib}/platform/CMSWindowsClipboardTextConverter.h
 	${root_lib}/platform/CMSWindowsClipboardUTF16Converter.h
+	${root_lib}/platform/CMSWindowsClipboardFilePathConverter.h
 	${root_lib}/platform/CMSWindowsDesks.h
 	${root_lib}/platform/CMSWindowsEventQueueBuffer.h
 	${root_lib}/platform/CMSWindowsKeyState.h
