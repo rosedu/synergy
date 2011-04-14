@@ -17,6 +17,8 @@
 
 #include "CXWindowsClipboardKdeFilePathConverter.h"
 #include "CUnicode.h"
+#include "CLog.h"
+
 
 //
 // CXWindowsClipboardKdeFilePathConverter
@@ -59,8 +61,10 @@ CXWindowsClipboardKdeFilePathConverter::fromIClipboard(const CString& data) cons
     LOG((CLOG_INFO "Converting  %s to uri/file-list filepath", data.c_str()));
     CString buffer;
     buffer.append("file://");
-    size_t pos = data.find(":");
-    buffer.append(data.substr(pos+1, data.size()-pos-1));
+    buffer.append(data);
+    for (size_t i = 0; i < buffer.size(); ++ i)
+    	if (buffer[i] == '\n')
+    		buffer.insert(i+1,"file://");
     LOG((CLOG_INFO "Converted string: %s", buffer.c_str()));
     return buffer;
 }
@@ -71,8 +75,18 @@ CXWindowsClipboardKdeFilePathConverter::toIClipboard(const CString& data) const
     CString buffer;
     LOG((CLOG_INFO "Converting %s to common filepath format", data.c_str()));
     buffer.append(ARCH->getName());
-	buffer+=":";
-	buffer.append(data.substr(7,data.size()-7));
+	buffer.append("\n");
+	size_t p = 0;
+	while (p != CString::npos)
+	{
+
+		size_t end = data.find("\n",p+1);
+		if (end == CString::npos)
+					end = data.size()-1;
+		buffer.append(data.substr(p+7,end-p-6));
+		p = data.find("file://",p+1);
+		LOG ((CLOG_INFO "New p is: %d",p));
+	}
     LOG((CLOG_INFO "Converted data: %s", buffer.c_str()));
     return buffer;
 }
