@@ -476,7 +476,7 @@ CServer::switchScreen(CBaseClientProxy* dst,
 #endif
 	assert(m_active != NULL);
 
-	LOG((CLOG_INFO "switch from \"%s\" to \"%s\" at %d,%d", getName(m_active).c_str(), getName(dst).c_str(), x, y));
+	LOG((CLOG_INFO "X_PAS0 switch from \"%s\" to \"%s\" at %d,%d", getName(m_active).c_str(), getName(dst).c_str(), x, y));
 
 	// stop waiting to switch
 	stopSwitch();
@@ -493,9 +493,11 @@ CServer::switchScreen(CBaseClientProxy* dst,
 	// since that's a waste of time we skip that and just warp the
 	// mouse.
 	if (m_active != dst) {
+		LOG((CLOG_INFO "X_PAS0.4"));
 		// leave active screen
 		if (!m_active->leave()) {
 			// cannot leave screen
+			LOG((CLOG_INFO "X_PAS We are fucked"));
 			LOG((CLOG_WARN "can't leave screen"));
 			return;
 		}
@@ -504,6 +506,7 @@ CServer::switchScreen(CBaseClientProxy* dst,
 		// primary screen.
 		LOG((CLOG_INFO "update the primary client's clipboard"));
 		if (m_active == m_primaryClient) {
+		LOG((CLOG_INFO "X_PAS0.5"));
 			for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
 				CClipboardInfo& clipboard = m_clipboards[id];
 				if (clipboard.m_clipboardOwner == getName(m_primaryClient)) {
@@ -520,56 +523,53 @@ CServer::switchScreen(CBaseClientProxy* dst,
 		++m_seqNum;
 
 		// enter new screen
-		m_active->enter(x, y, m_seqNum,
-								m_primaryClient->getToggleMask(),
-								forScreensaver);
+		m_active->enter(x, y, m_seqNum,	m_primaryClient->getToggleMask(), forScreensaver);
 
 		// send the clipboard data to new active screen
 		for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
-			LOG((CLOG_INFO "xCServer::switchSCreen call. Name: %s", m_active->getName().c_str() ));
-		m_clipboards[id].m_clipboard.open(0);
-		CString content;
-		if(m_clipboards[id].m_clipboard.has(IClipboard::kFilePath)) 
-		{
-			CString prefix, source;
-			CString content = m_clipboards[id].m_clipboard.get(IClipboard::kFilePath);
-			size_t pos = content.find("\n");
-			source = content.substr(0,pos);
-			//content = content.substr(pos+1, content.size());
-			CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, m_active->getName());
-			LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), content.c_str()));
-			CString new_content;
-			if (map!=NULL && !map->empty())
+			LOG((CLOG_INFO "X_PAS xCServer::switchSCreen call. Name: %s", m_active->getName().c_str() ));
+			m_clipboards[id].m_clipboard.open(0);
+			CString content, new_content;
+			if(m_clipboards[id].m_clipboard.has(IClipboard::kFilePath)) 
 			{
-				while (pos < content.size())
+				CString prefix, source;
+				content = m_clipboards[id].m_clipboard.get(IClipboard::kFilePath);
+				size_t pos = content.find("\n");
+				source = content.substr(0,pos);
+				//content = content.substr(pos+1, content.size());
+				CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, m_active->getName());
+				LOG((CLOG_INFO "X_PAS1 setClipboard: %s %s",source.c_str(), content.c_str()));
+				
+				if (map!=NULL && !map->empty())
 				{
-					++pos;
-					CString line = content.substr(pos, content.find("\n", pos)-pos+1);
-					pos = content.find("\n", pos);
-					LOG ((CLOG_INFO "The line is: %s\n", line.c_str()));
-					for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
+					while (pos < content.size())
 					{
-						int p = line.find(it->first);
-						
-						if( p != std::string::npos)
+						++pos;
+						CString line = content.substr(pos, content.find("\n", pos)-pos+1);
+						pos = content.find("\n", pos);
+						LOG ((CLOG_INFO "X_PAS2 The line is: %s\n", line.c_str()));
+						for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
 						{
-							line = it->second + line.substr(p + it->first.size() );
+							int p = line.find(it->first);
 							
-							break;
+							if( p != std::string::npos)
+							{
+								line = it->second + line.substr(p + it->first.size() );
+								
+								break;
+							}
 						}
+						LOG ((CLOG_INFO "it changed to: %s\n", line.c_str()));
+						new_content.append(line);
 					}
-					LOG ((CLOG_INFO "it changed to: %s\n", line.c_str()));
-					new_content.append(line);
+					m_clipboards[id].m_clipboard.add(IClipboard::kFilePath, new_content);
+					LOG((CLOG_INFO "X_PAS3 setClipboard: %s %s",source.c_str(), m_clipboards[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
 				}
-				m_clipboards[id].m_clipboard.add(IClipboard::kFilePath, new_content);
-				LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), m_clipboards[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
-			}
+				LOG((CLOG_INFO "X_PAS4 Changed2 clipboard: %s", new_content.c_str()));
+			}		
+			m_clipboards[id].m_clipboard.close();
 			
-		}	
-		
-		m_clipboards[id].m_clipboard.close();
-		LOG((CLOG_INFO "Changed2 clipboard: %s", content.c_str()));
-		m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
+			m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
 		}
 	}
 	else {
