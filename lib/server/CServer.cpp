@@ -528,46 +528,7 @@ CServer::switchScreen(CBaseClientProxy* dst,
 		// send the clipboard data to new active screen
 		for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
 			LOG((CLOG_INFO "X_PAS xCServer::switchSCreen call. Name: %s", m_active->getName().c_str() ));
-			m_clipboards[id].m_clipboard.open(0);
-			CString content, new_content;
-			if(m_clipboards[id].m_clipboard.has(IClipboard::kFilePath)) 
-			{
-				CString prefix, source;
-				content = m_clipboards[id].m_clipboard.get(IClipboard::kFilePath);
-				size_t pos = content.find("\n");
-				source = content.substr(0,pos);
-				//content = content.substr(pos+1, content.size());
-				CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, m_active->getName());
-				LOG((CLOG_INFO "X_PAS1 setClipboard: %s %s",source.c_str(), content.c_str()));
-				
-				if (map!=NULL && !map->empty())
-				{
-					while (pos < content.size())
-					{
-						++pos;
-						CString line = content.substr(pos, content.find("\n", pos)-pos+1);
-						pos = content.find("\n", pos);
-						LOG ((CLOG_INFO "X_PAS2 The line is: %s\n", line.c_str()));
-						for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
-						{
-							int p = line.find(it->first);
-							
-							if( p != std::string::npos)
-							{
-								line = it->second + line.substr(p + it->first.size() );
-								
-								break;
-							}
-						}
-						LOG ((CLOG_INFO "it changed to: %s\n", line.c_str()));
-						new_content.append(line);
-					}
-					m_clipboards[id].m_clipboard.add(IClipboard::kFilePath, new_content);
-					LOG((CLOG_INFO "X_PAS3 setClipboard: %s %s",source.c_str(), m_clipboards[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
-				}
-				LOG((CLOG_INFO "X_PAS4 Changed2 clipboard: %s", new_content.c_str()));
-			}		
-			m_clipboards[id].m_clipboard.close();
+			
 			
 			m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
 		}
