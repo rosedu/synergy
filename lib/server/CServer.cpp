@@ -35,6 +35,8 @@
 #include <cstring>
 #include <cstdlib>
 
+#include "CServerApp.h"
+
 //
 // CServer
 //
@@ -458,6 +460,8 @@ CServer::getJumpZoneSize(CBaseClientProxy* client) const
 	}
 }
 
+#include <iostream>
+typedef std::map<CString,  CString> CScreenMounts;
 void
 CServer::switchScreen(CBaseClientProxy* dst,
 				SInt32 x, SInt32 y, bool forScreensaver)
@@ -522,7 +526,35 @@ CServer::switchScreen(CBaseClientProxy* dst,
 
 		// send the clipboard data to new active screen
 		for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
-			m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
+			LOG((CLOG_INFO "xCServer::switchSCreen call. Name: %s", m_active->getName().c_str() ));
+		m_clipboards[id].m_clipboard.open(0);
+		if(m_clipboards[id].m_clipboard.has(IClipboard::kFilePath)) 
+		{
+			CString prefix, source;
+			CString content = m_clipboards[id].m_clipboard.get(IClipboard::kFilePath);
+			size_t pos = content.find("\n");
+			source = content.substr(0,pos);
+			content = content.substr(pos+1, content.size());
+			CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, m_active->getName());
+			LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), content.c_str()));
+			
+			if (map!=NULL && !map->empty())
+			for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
+			{
+				int p = content.find(it->first);
+				if( p != std::string::npos)
+				{
+					content = it->second + content.substr(p + it->first.size() );
+					m_clipboards[id].m_clipboard.add(IClipboard::kFilePath, content);
+					break;
+				}
+			}
+			LOG((CLOG_INFO "setClipboard: %s %s",source.c_str(), m_clipboards[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
+			
+		}	
+		
+		m_clipboards[id].m_clipboard.close();
+		m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
 		}
 	}
 	else {
@@ -1501,6 +1533,7 @@ void
 CServer::onClipboardChanged(CBaseClientProxy* sender,
 				ClipboardID id, UInt32 seqNum)
 {
+	LOG((CLOG_INFO "xCserver::onClipboardChanged call. Start"));
 	CClipboardInfo& clipboard = m_clipboards[id];
 
 	// ignore update if sequence number is old
@@ -1534,6 +1567,7 @@ CServer::onClipboardChanged(CBaseClientProxy* sender,
 	}
 
 	// send the new clipboard to the active screen
+	LOG((CLOG_INFO "xCserver::onClipboardChanged call. SenderName: %s. ActiveClientName: %s", sender->getName().c_str(), m_active->getName().c_str()));
 	m_active->setClipboard(id, &clipboard.m_clipboard);
 }
 

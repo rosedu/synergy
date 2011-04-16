@@ -155,6 +155,7 @@ CPrimaryClient::leave()
 void
 CPrimaryClient::setClipboard(ClipboardID id, const IClipboard* clipboard)
 {
+	LOG((CLOG_INFO "xCprimaryClient::setClipboard call. Name: %s", getName().c_str()));
 	// ignore if this clipboard is already clean
 	if (m_clipboardDirty[id]) {
 		// this clipboard is now clean
