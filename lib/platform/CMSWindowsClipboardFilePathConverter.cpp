@@ -66,7 +66,7 @@ CMSWindowsClipboardFilePathConverter::fromIClipboard(const CString& data) const
 	pDrop->pFiles = sizeof(DROPFILES);
 	TCHAR* pszBuff = (TCHAR*)(LPBYTE(pDrop)+sizeof(DROPFILES));
 	lstrcpy(pszBuff,data.c_str());
-	for (TCHAR * i = pszBuff; i < LPBYTE(pDrop)+uBuffSize; ++ i) //Passing through all the characters
+	for (TCHAR * i = pszBuff; (UINT)i < (UINT)LPBYTE(pDrop)+uBuffSize; ++ i) //Passing through all the characters
 		if (*i == '\n') //Replacing the end of line character with null
 			*i = '\0';  //in order to create a double null terminated string list
 	

@@ -279,7 +279,6 @@ CServerApp::loadConfig(const CString& pathname)
 			return false;
 		}
 		configStream >> *args().m_config;
-		CConfig::CScreenMounts* mounts = (*args().m_config).getMounts("dexter","tudalex-laptop");
 
 		LOG((CLOG_INFO "configuration read successfully"));
 		return true;
