@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -21,6 +21,8 @@
 #include "CXWindowsClipboardUTF8Converter.h"
 #include "CXWindowsClipboardHTMLConverter.h"
 #include "CXWindowsClipboardBMPConverter.h"
+#include "CXWindowsClipboardGnomeFilePathConverter.h"
+#include "CXWindowsClipboardKdeFilePathConverter.h"
 #include "CXWindowsUtil.h"
 #include "CThread.h"
 #include "CLog.h"
@@ -45,6 +47,8 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 	m_timeOwned(0),
 	m_timeLost(0)
 {
+    LOG((CLOG_DEBUG "CXWindowsClipboard Constructor with id: %d", id));
+
 	// get some atoms
 	m_atomTargets         = XInternAtom(m_display, "TARGETS", False);
 	m_atomMultiple        = XInternAtom(m_display, "MULTIPLE", False);
@@ -58,6 +62,7 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 	m_atomMotifClipHeader = XInternAtom(m_display, "_MOTIF_CLIP_HEADER", False);
 	m_atomMotifClipAccess = XInternAtom(m_display,
 								"_MOTIF_CLIP_LOCK_ACCESS_VALID", False);
+    m_atomFilePath        = XInternAtom(m_display, "x-special/gnome-copied-files", False);
 	m_atomGDKSelection    = XInternAtom(m_display, "GDK_SELECTION", False);
 
 	// set selection atom based on clipboard id
@@ -88,6 +93,12 @@ CXWindowsClipboard::CXWindowsClipboard(Display* display,
 								"text/plain"));
 	m_converters.push_back(new CXWindowsClipboardTextConverter(m_display,
 								"STRING"));
+    m_converters.push_back(new CXWindowsClipboardGnomeFilePathConverter(m_display,
+                                "x-special/gnome-copied-files"));
+    m_converters.push_back(new CXWindowsClipboardKdeFilePathConverter(m_display,
+                                "text/uri-list"));
+
+
 
 	// we have no data
 	clearCache();
@@ -102,7 +113,7 @@ CXWindowsClipboard::~CXWindowsClipboard()
 void
 CXWindowsClipboard::lost(Time time)
 {
-	LOG((CLOG_DEBUG "lost clipboard %d ownership at %d", m_id, time));
+	LOG((CLOG_INFO "lost clipboard %d ownership at %d", m_id, time));
 	if (m_owner) {
 		m_owner    = false;
 		m_timeLost = time;
@@ -118,7 +129,7 @@ CXWindowsClipboard::addRequest(Window owner, Window requestor,
 	// at the given time.
 	bool success = false;
 	if (owner == m_window) {
-		LOG((CLOG_DEBUG1 "request for clipboard %d, target %s by 0x%08x (property=%s)", m_selection, CXWindowsUtil::atomToString(m_display, target).c_str(), requestor, CXWindowsUtil::atomToString(m_display, property).c_str()));
+		LOG((CLOG_INFO "request for clipboard %d, target %s by 0x%08x (property=%s)", m_selection, CXWindowsUtil::atomToString(m_display, target).c_str(), requestor, CXWindowsUtil::atomToString(m_display, property).c_str()));
 		if (wasOwnedAtTime(time)) {
 			if (target == m_atomMultiple) {
 				// add a multiple request.  property may not be None
@@ -153,12 +164,17 @@ bool
 CXWindowsClipboard::addSimpleRequest(Window requestor,
 				Atom target, ::Time time, Atom property)
 {
+    LOG((CLOG_INFO "CXWindowsClipboard::addsimpleRequest call"));
 	// obsolete requestors may supply a None property.  in
 	// that case we use the target as the property to store
 	// the conversion.
 	if (property == None) {
 		property = target;
 	}
+    if( target == XInternAtom(m_display, "x-special/gnome-copied-files", False))
+    {
+        LOG((CLOG_INFO "Paste event BITCHES.\n"));
+    }
 
 	// handle targets
 	CString data;
@@ -266,7 +282,7 @@ CXWindowsClipboard::empty()
 {
 	assert(m_open);
 
-	LOG((CLOG_DEBUG "empty clipboard %d", m_id));
+	LOG((CLOG_INFO "empty clipboard %d", m_id));
 
 	// assert ownership of clipboard
 	XSetSelectionOwner(m_display, m_selection, m_window, m_time);
@@ -300,7 +316,7 @@ CXWindowsClipboard::add(EFormat format, const CString& data)
 	assert(m_open);
 	assert(m_owner);
 
-	LOG((CLOG_DEBUG "add %d bytes to clipboard %d format: %d", data.size(), m_id, format));
+	LOG((CLOG_INFO "add %d bytes to clipboard %d format: %d", data.size(), m_id, format));
 
 	m_data[format]  = data;
 	m_added[format] = true;
@@ -313,7 +329,7 @@ CXWindowsClipboard::open(Time time) const
 {
 	assert(!m_open);
 
-	LOG((CLOG_DEBUG "open clipboard %d", m_id));
+	LOG((CLOG_INFO "open clipboard %d", m_id));
 
 	// assume not motif
 	m_motif = false;
@@ -327,7 +343,7 @@ CXWindowsClipboard::open(Time time) const
 		// check if motif owns the selection.  unlock motif clipboard
 		// if it does not.
 		m_motif = motifOwnsClipboard();
-		LOG((CLOG_DEBUG1 "motif does %sown clipboard", m_motif ? "" : "not "));
+		LOG((CLOG_INFO "motif does %sown clipboard", m_motif ? "" : "not "));
 		if (!m_motif) {
 			motifUnlockClipboard();
 		}
@@ -348,7 +364,7 @@ CXWindowsClipboard::close() const
 {
 	assert(m_open);
 
-	LOG((CLOG_DEBUG "close clipboard %d", m_id));
+	LOG((CLOG_INFO "close clipboard %d", m_id));
 
 	// unlock clipboard
 	if (m_motif) {
@@ -469,6 +485,7 @@ CXWindowsClipboard::doClearCache()
 void
 CXWindowsClipboard::fillCache() const
 {
+    LOG((CLOG_INFO "CXWindowsCLipboard::fillCache()"));
 	// get the selection data if not already cached
 	checkCache();
 	if (!m_cached) {
@@ -493,7 +510,7 @@ CXWindowsClipboard::doFillCache()
 void
 CXWindowsClipboard::icccmFillCache()
 {
-	LOG((CLOG_DEBUG "ICCCM fill clipboard %d", m_id));
+	LOG((CLOG_INFO "ICCCM fill clipboard %d", m_id));
 
 	// see if we can get the list of available formats from the selection.
 	// if not then use a default list of formats.  note that some clipboard
@@ -519,7 +536,7 @@ CXWindowsClipboard::icccmFillCache()
 	for (ConverterList::const_iterator index = m_converters.begin();
 								index != m_converters.end(); ++index) {
 		IXWindowsClipboardConverter* converter = *index;
-
+        LOG((CLOG_INFO "Trying %i format.", converter->getFormat() ));
 		// skip already handled targets
 		if (m_added[converter->getFormat()]) {
 			continue;
@@ -563,6 +580,7 @@ bool
 CXWindowsClipboard::icccmGetSelection(Atom target,
 				Atom* actualTarget, CString* data) const
 {
+    LOG((CLOG_INFO "CXWindowsClipboard::icccmGetSelection call"));
 	assert(actualTarget != NULL);
 	assert(data         != NULL);
 
@@ -628,7 +646,7 @@ CXWindowsClipboard::motifLockClipboard() const
 void
 CXWindowsClipboard::motifUnlockClipboard() const
 {
-	LOG((CLOG_DEBUG1 "unlocked motif clipboard"));
+	LOG((CLOG_INFO "unlocked motif clipboard"));
 
 	// fail if we don't own the lock
 	Window lockOwner = XGetSelectionOwner(m_display, m_atomMotifClipLock);
@@ -680,7 +698,7 @@ CXWindowsClipboard::motifOwnsClipboard() const
 void
 CXWindowsClipboard::motifFillCache()
 {
-	LOG((CLOG_DEBUG "Motif fill clipboard %d", m_id));
+	LOG((CLOG_INFO "Motif fill clipboard %d", m_id));
 
 	// get the Motif clipboard header property from the root window
 	Atom target;
@@ -1269,7 +1287,7 @@ CXWindowsClipboard::CICCCMGetClipboard::readClipboard(Display* display,
 	assert(actualTarget != NULL);
 	assert(data         != NULL);
 
-	LOG((CLOG_DEBUG1 "request selection=%s, target=%s, window=%x", CXWindowsUtil::atomToString(display, selection).c_str(), CXWindowsUtil::atomToString(display, target).c_str(), m_requestor));
+	LOG((CLOG_INFO "request selection=%s, target=%s, window=%x", CXWindowsUtil::atomToString(display, selection).c_str(), CXWindowsUtil::atomToString(display, target).c_str(), m_requestor));
 
 	m_atomNone = XInternAtom(display, "NONE", False);
 	m_atomIncr = XInternAtom(display, "INCR", False);

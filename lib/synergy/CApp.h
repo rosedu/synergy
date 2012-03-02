@@ -149,7 +149,8 @@ private:
 
 #define HELP_COMMON_INFO_2 \
 	"  -h, --help               display this help and exit.\n" \
-	"      --version            display version information and exit.\n"
+	"      --version            display version information and exit.\n"\
+	"  -p, --ping               prints pong and exists"
 
 #define HELP_COMMON_ARGS \
 	" [--name <screen-name>]" \

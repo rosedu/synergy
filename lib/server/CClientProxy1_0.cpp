@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -23,6 +23,8 @@
 #include "IEventQueue.h"
 #include "TMethodEventJob.h"
 #include <cstring>
+#include "CArch.h"
+#include "CServerApp.h"
 
 //
 // CClientProxy1_0
@@ -228,7 +230,12 @@ CClientProxy1_0::handleFlatline(const CEvent&, void*)
 bool
 CClientProxy1_0::getClipboard(ClipboardID id, IClipboard* clipboard) const
 {
+    LOG((CLOG_INFO "CClientProxy1_0::getClipboard call"));
+    m_clipboard[id].m_clipboard.open(0);
+        LOG((CLOG_INFO "Clipboard content: %s", m_clipboard[id].m_clipboard.get(IClipboard::kFilePath).c_str() ));
+		m_clipboard[id].m_clipboard.close();
 	CClipboard::copy(clipboard, &m_clipboard[id].m_clipboard);
+
 	return true;
 }
 
@@ -268,19 +275,64 @@ CClientProxy1_0::leave()
 	return true;
 }
 
+typedef std::map<CString,  CString> CScreenMounts;
 void
+
 CClientProxy1_0::setClipboard(ClipboardID id, const IClipboard* clipboard)
 {
+	LOG((CLOG_INFO "xCClientProxy1_0::setClipboard call. Name: %s", getName().c_str()));
 	// ignore if this clipboard is already clean
 	if (m_clipboard[id].m_dirty) {
 		// this clipboard is now clean
 		m_clipboard[id].m_dirty = false;
+
 		CClipboard::copy(&m_clipboard[id].m_clipboard, clipboard);
+		m_clipboard[id].m_clipboard.open(0);
+			CString content, new_content;
+			if(m_clipboard[id].m_clipboard.has(IClipboard::kFilePath)) 
+			{
+				CString prefix, source;
+				content = m_clipboard[id].m_clipboard.get(IClipboard::kFilePath);
+				size_t pos = content.find("\n");
+				source = content.substr(0,pos);
+				//content = content.substr(pos+1, content.size());
+				CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, getName());
+				LOG((CLOG_INFO "X_PAS1 setClipboard: %s %s",source.c_str(), content.c_str()));
+				
+				if (map!=NULL && !map->empty())
+				{
+					while (pos < content.size())
+					{
+						++pos;
+						CString line = content.substr(pos, content.find("\n", pos)-pos+1);
+						pos = content.find("\n", pos);
+						LOG ((CLOG_INFO "X_PAS2 The line is: %s\n", line.c_str()));
+						for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
+						{
+							int p = line.find(it->first);
+							
+							if( p != std::string::npos)
+							{
+								line = it->second + line.substr(p + it->first.size() );
+								
+								break;
+							}
+						}
+						LOG ((CLOG_INFO "it changed to: %s\n", line.c_str()));
+						new_content.append(line);
+					}
+					m_clipboard[id].m_clipboard.add(IClipboard::kFilePath, new_content);
+					LOG((CLOG_INFO "X_PAS3 setClipboard: %s %s",source.c_str(), m_clipboard[id].m_clipboard.get(IClipboard::kFilePath).c_str()));
+				}
+				LOG((CLOG_INFO "X_PAS4 Changed2 clipboard: %s", new_content.c_str()));
+			}		
+			m_clipboard[id].m_clipboard.close();
 
 		CString data = m_clipboard[id].m_clipboard.marshall();
-		LOG((CLOG_DEBUG "send clipboard %d to \"%s\" size=%d", id, getName().c_str(), data.size()));
+		LOG((CLOG_INFO "send clipboard %d to \"%s\" size=%d", id, getName().c_str(), data.size()));
 		CProtocolUtil::writef(getStream(), kMsgDClipboard, id, 0, &data);
 	}
+	
 }
 
 void

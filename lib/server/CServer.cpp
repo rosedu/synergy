@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -34,6 +34,8 @@
 #include "CKeyState.h"
 #include <cstring>
 #include <cstdlib>
+
+#include "CServerApp.h"
 
 //
 // CServer
@@ -458,6 +460,8 @@ CServer::getJumpZoneSize(CBaseClientProxy* client) const
 	}
 }
 
+#include <iostream>
+typedef std::map<CString,  CString> CScreenMounts;
 void
 CServer::switchScreen(CBaseClientProxy* dst,
 				SInt32 x, SInt32 y, bool forScreensaver)
@@ -472,7 +476,7 @@ CServer::switchScreen(CBaseClientProxy* dst,
 #endif
 	assert(m_active != NULL);
 
-	LOG((CLOG_INFO "switch from \"%s\" to \"%s\" at %d,%d", getName(m_active).c_str(), getName(dst).c_str(), x, y));
+	LOG((CLOG_INFO "X_PAS0 switch from \"%s\" to \"%s\" at %d,%d", getName(m_active).c_str(), getName(dst).c_str(), x, y));
 
 	// stop waiting to switch
 	stopSwitch();
@@ -489,16 +493,20 @@ CServer::switchScreen(CBaseClientProxy* dst,
 	// since that's a waste of time we skip that and just warp the
 	// mouse.
 	if (m_active != dst) {
+		LOG((CLOG_INFO "X_PAS0.4"));
 		// leave active screen
 		if (!m_active->leave()) {
 			// cannot leave screen
+			LOG((CLOG_INFO "X_PAS We are fucked"));
 			LOG((CLOG_WARN "can't leave screen"));
 			return;
 		}
 
 		// update the primary client's clipboards if we're leaving the
 		// primary screen.
+		LOG((CLOG_INFO "update the primary client's clipboard"));
 		if (m_active == m_primaryClient) {
+		LOG((CLOG_INFO "X_PAS0.5"));
 			for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
 				CClipboardInfo& clipboard = m_clipboards[id];
 				if (clipboard.m_clipboardOwner == getName(m_primaryClient)) {
@@ -515,12 +523,13 @@ CServer::switchScreen(CBaseClientProxy* dst,
 		++m_seqNum;
 
 		// enter new screen
-		m_active->enter(x, y, m_seqNum,
-								m_primaryClient->getToggleMask(),
-								forScreensaver);
+		m_active->enter(x, y, m_seqNum,	m_primaryClient->getToggleMask(), forScreensaver);
 
 		// send the clipboard data to new active screen
 		for (ClipboardID id = 0; id < kClipboardEnd; ++id) {
+			LOG((CLOG_INFO "X_PAS xCServer::switchSCreen call. Name: %s", m_active->getName().c_str() ));
+			
+			
 			m_active->setClipboard(id, &m_clipboards[id].m_clipboard);
 		}
 	}
@@ -540,7 +549,7 @@ CServer::jumpToScreen(CBaseClientProxy* newScreen)
 	// get the last cursor position on the target screen
 	SInt32 x, y;
 	newScreen->getJumpCursorPos(x, y);
-	
+
 	switchScreen(newScreen, x, y, false);
 }
 
@@ -896,8 +905,8 @@ CServer::isSwitchOkay(CBaseClientProxy* newScreen,
 		LOG((CLOG_DEBUG1 "need modifiers to switch"));
 		preventSwitch = true;
 		stopSwitch();
-	} 
-	
+	}
+
 	return !preventSwitch;
 }
 
@@ -1373,6 +1382,7 @@ CServer::handleClientDisconnected(const CEvent&, void* vclient)
 	removeActiveClient(client);
 	removeOldClient(client);
 	delete client;
+
 }
 
 void
@@ -1388,7 +1398,7 @@ CServer::handleClientCloseTimeout(const CEvent&, void* vclient)
 void
 CServer::handleSwitchToScreenEvent(const CEvent& event, void*)
 {
-	CSwitchToScreenInfo* info = 
+	CSwitchToScreenInfo* info =
 		reinterpret_cast<CSwitchToScreenInfo*>(event.getData());
 
 	CClientList::const_iterator index = m_clients.find(info->m_screen);
@@ -1403,7 +1413,7 @@ CServer::handleSwitchToScreenEvent(const CEvent& event, void*)
 void
 CServer::handleSwitchInDirectionEvent(const CEvent& event, void*)
 {
-	CSwitchInDirectionInfo* info = 
+	CSwitchInDirectionInfo* info =
 		reinterpret_cast<CSwitchInDirectionInfo*>(event.getData());
 
 	// jump to screen in chosen direction from center of this screen
@@ -1499,6 +1509,7 @@ void
 CServer::onClipboardChanged(CBaseClientProxy* sender,
 				ClipboardID id, UInt32 seqNum)
 {
+	LOG((CLOG_INFO "xCserver::onClipboardChanged call. Start"));
 	CClipboardInfo& clipboard = m_clipboards[id];
 
 	// ignore update if sequence number is old
@@ -1510,7 +1521,7 @@ CServer::onClipboardChanged(CBaseClientProxy* sender,
 	// should be the expected client
 	assert(sender == m_clients.find(clipboard.m_clipboardOwner)->second);
 
-	// get data
+	// get data - this is black magic
 	sender->getClipboard(id, &clipboard.m_clipboard);
 
 	// ignore if data hasn't changed
@@ -1532,6 +1543,7 @@ CServer::onClipboardChanged(CBaseClientProxy* sender,
 	}
 
 	// send the new clipboard to the active screen
+	LOG((CLOG_INFO "xCserver::onClipboardChanged call. SenderName: %s. ActiveClientName: %s", sender->getName().c_str(), m_active->getName().c_str()));
 	m_active->setClipboard(id, &clipboard.m_clipboard);
 }
 

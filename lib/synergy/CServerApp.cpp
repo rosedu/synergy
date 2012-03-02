@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -83,6 +83,7 @@ CServerApp::CArgs::~CArgs()
 bool
 CServerApp::parseArg(const int& argc, const char* const* argv, int& i)
 {
+    LOG((CLOG_INFO "CServerApp::parseArg call"));
 	if (CApp::parseArg(argc, argv, i)) {
 		// found common arg
 		return true;
@@ -90,6 +91,7 @@ CServerApp::parseArg(const int& argc, const char* const* argv, int& i)
 
 	else if (isArg(i, argc, argv, "-a", "--address", 1)) {
 		// save listen address
+		LOG((CLOG_INFO "Found address option"));
 		try {
 			*args().m_synergyAddress = CNetworkAddress(argv[i + 1],
 				kDefaultPort);
@@ -120,6 +122,7 @@ CServerApp::parseArg(const int& argc, const char* const* argv, int& i)
 void
 CServerApp::parseArgs(int argc, const char* const* argv)
 {
+    LOG((CLOG_INFO "CServerApp::parseArgs call"));
 	// asserts values, sets defaults, and parses args
 	int i;
 	CApp::parseArgs(argc, argv, i);
@@ -257,6 +260,7 @@ CServerApp::loadConfig()
 		LOG((CLOG_PRINT "%s: no configuration available", args().m_pname));
 		m_bye(kExitConfig);
 	}
+
 }
 
 bool
@@ -275,7 +279,8 @@ CServerApp::loadConfig(const CString& pathname)
 			return false;
 		}
 		configStream >> *args().m_config;
-		LOG((CLOG_DEBUG "configuration read successfully"));
+
+		LOG((CLOG_INFO "configuration read successfully"));
 		return true;
 	}
 	catch (XConfigRead& e) {
@@ -286,13 +291,13 @@ CServerApp::loadConfig(const CString& pathname)
 	return false;
 }
 
-CEvent::Type 
+CEvent::Type
 CServerApp::getReloadConfigEvent()
 {
 	return CEvent::registerTypeOnce(s_reloadConfigEvent, "reloadConfig");
 }
 
-void 
+void
 CServerApp::forceReconnect(const CEvent&, void*)
 {
 	if (s_server != NULL) {
@@ -300,7 +305,7 @@ CServerApp::forceReconnect(const CEvent&, void*)
 	}
 }
 
-CEvent::Type 
+CEvent::Type
 CServerApp::getForceReconnectEvent()
 {
 	return CEvent::registerTypeOnce(s_forceReconnectEvent, "forceReconnect");
@@ -312,7 +317,7 @@ CServerApp::getResetServerEvent()
 	return CEvent::registerTypeOnce(s_resetServerEvent, "resetServer");
 }
 
-void 
+void
 CServerApp::handleClientConnected(const CEvent&, void* vlistener)
 {
 	CClientListener* listener = reinterpret_cast<CClientListener*>(vlistener);
@@ -361,7 +366,7 @@ CServerApp::closeServer(CServer* server)
 	delete server;
 }
 
-void 
+void
 CServerApp::stopRetryTimer()
 {
 	if (s_timer != NULL) {
@@ -385,7 +390,7 @@ void CServerApp::updateStatus( const CString& msg )
 	}
 }
 
-void 
+void
 CServerApp::closeClientListener(CClientListener* listen)
 {
 	if (listen != NULL) {
@@ -394,7 +399,7 @@ CServerApp::closeClientListener(CClientListener* listen)
 	}
 }
 
-void 
+void
 CServerApp::stopServer()
 {
 	if (s_serverState == kStarted) {
@@ -418,7 +423,7 @@ CServerApp::closePrimaryClient(CPrimaryClient* primaryClient)
 	delete primaryClient;
 }
 
-void 
+void
 CServerApp::closeServerScreen(CScreen* screen)
 {
 	if (screen != NULL) {
@@ -573,7 +578,7 @@ CScreen* CServerApp::openServerScreen()
 	return screen;
 }
 
-bool 
+bool
 CServerApp::startServer()
 {
 	// skip if already started or starting
@@ -634,7 +639,7 @@ CServerApp::startServer()
 	}
 }
 
-CScreen* 
+CScreen*
 CServerApp::createScreen()
 {
 #if WINAPI_MSWINDOWS
@@ -647,7 +652,7 @@ CServerApp::createScreen()
 #endif
 }
 
-CPrimaryClient* 
+CPrimaryClient*
 CServerApp::openPrimaryClient(const CString& name, CScreen* screen)
 {
 	LOG((CLOG_DEBUG1 "creating primary screen"));
@@ -662,7 +667,7 @@ CServerApp::handleScreenError(const CEvent&, void*)
 	EVENTQUEUE->addEvent(CEvent(CEvent::kQuit));
 }
 
-void 
+void
 CServerApp::handleSuspend(const CEvent&, void*)
 {
 	if (!m_suspended) {
@@ -672,7 +677,7 @@ CServerApp::handleSuspend(const CEvent&, void*)
 	}
 }
 
-void 
+void
 CServerApp::handleResume(const CEvent&, void*)
 {
 	if (m_suspended) {
@@ -693,7 +698,7 @@ CServerApp::openClientListener(const CNetworkAddress& address)
 	return listen;
 }
 
-CServer* 
+CServer*
 CServerApp::openServer(const CConfig& config, CPrimaryClient* primaryClient)
 {
 	CServer* server = new CServer(config, primaryClient);
@@ -803,9 +808,10 @@ void CServerApp::resetServer(const CEvent&, void*)
 	startServer();
 }
 
-int 
+int
 CServerApp::runInner(int argc, char** argv, ILogOutputter* outputter, StartupFunc startup)
 {
+    LOG((CLOG_INFO "CServerApp::runInner call"));
 	// general initialization
 	args().m_synergyAddress = new CNetworkAddress;
 	args().m_config         = new CConfig;
@@ -834,9 +840,10 @@ int daemonMainLoopStatic(int argc, const char** argv) {
 	return CServerApp::instance().daemonMainLoop(argc, argv);
 }
 
-int 
+int
 CServerApp::standardStartup(int argc, char** argv)
 {
+    LOG((CLOG_INFO "CServerApp::standardStartup call"));
 	initApp(argc, argv);
 
 	// daemonize if requested
@@ -848,7 +855,7 @@ CServerApp::standardStartup(int argc, char** argv)
 	}
 }
 
-int 
+int
 CServerApp::foregroundStartup(int argc, char** argv)
 {
 	initApp(argc, argv);
@@ -858,13 +865,13 @@ CServerApp::foregroundStartup(int argc, char** argv)
 }
 
 static
-int 
-mainLoopStatic() 
+int
+mainLoopStatic()
 {
 	return CServerApp::instance().mainLoop();
 }
 
-const char* 
+const char*
 CServerApp::daemonName() const
 {
 #if SYSAPI_WIN32
@@ -874,7 +881,7 @@ CServerApp::daemonName() const
 #endif
 }
 
-const char* 
+const char*
 CServerApp::daemonInfo() const
 {
 #if SYSAPI_WIN32

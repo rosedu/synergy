@@ -19,7 +19,8 @@
 #include "CScreen.h"
 #include "CClipboard.h"
 #include "CLog.h"
-
+#include "CServerApp.h"
+#include <cstring>
 //
 // CPrimaryClient
 //
@@ -151,17 +152,60 @@ CPrimaryClient::leave()
 {
 	return m_screen->leave();
 }
-
+#include <iostream>
+typedef std::map<CString,  CString> CScreenMounts;
 void
 CPrimaryClient::setClipboard(ClipboardID id, const IClipboard* clipboard)
 {
+	LOG((CLOG_INFO "xCprimaryClient::setClipboard call. Name: %s", getName().c_str()));
 	// ignore if this clipboard is already clean
 	if (m_clipboardDirty[id]) {
 		// this clipboard is now clean
 		m_clipboardDirty[id] = false;
-
+	CClipboard Clipboard;
+	Clipboard.copy(&Clipboard,clipboard); 
+	Clipboard.open(0);
+			CString content, new_content;
+			if(Clipboard.has(IClipboard::kFilePath)) 
+			{
+				CString prefix, source;
+				content = Clipboard.get(IClipboard::kFilePath);
+				size_t pos = content.find("\n");
+				source = content.substr(0,pos);
+				//content = content.substr(pos+1, content.size());
+				CScreenMounts *map = ((CServerApp*) &ARCH->app())->args().m_config->getMounts(source, getName());
+				LOG((CLOG_INFO "X_PAS1 setClipboard: %s %s",source.c_str(), content.c_str()));
+				
+				if (map!=NULL && !map->empty())
+				{
+					while (pos < content.size())
+					{
+						++pos;
+						CString line = content.substr(pos, content.find("\n", pos)-pos+1);
+						pos = content.find("\n", pos);
+						LOG ((CLOG_INFO "X_PAS2 The line is: %s\n", line.c_str()));
+						for( CScreenMounts::iterator it = map->begin(); it != map->end(); it++)
+						{
+							int p = line.find(it->first);
+							
+							if( p != std::string::npos)
+							{
+								line = it->second + line.substr(p + it->first.size() );
+								
+								break;
+							}
+						}
+						LOG ((CLOG_INFO "it changed to: %s\n", line.c_str()));
+						new_content.append(line);
+					}
+					Clipboard.add(IClipboard::kFilePath, new_content);
+					LOG((CLOG_INFO "X_PAS3 setClipboard: %s %s",source.c_str(), Clipboard.get(IClipboard::kFilePath).c_str()));
+				}
+				LOG((CLOG_INFO "X_PAS4 Changed2 clipboard: %s", new_content.c_str()));
+			}		
+			Clipboard.close();
 		// set clipboard
-		m_screen->setClipboard(id, clipboard);
+		m_screen->setClipboard(id, &Clipboard);
 	}
 }
 

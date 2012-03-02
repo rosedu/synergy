@@ -14,29 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
-#pragma once
 
-#include "IArchAppUtil.h"
-#include "XSynergy.h"
+#ifndef CMSWINDOWSCLIPBOARDFILEPATHCONVERTER_H
+#define CMSWINDOWSCLIPBOARDFILEPATHCONVERTER_H
 
-class CArchAppUtil : public IArchAppUtil {
+//#include "CMSWindowsClipboardAnyTextConverter.h"
+#include "CMSWindowsClipboard.h"
+#include <ShellAPI.h>
+
+//! Convert to/from locale text encoding
+class CMSWindowsClipboardFilePathConverter :
+				public IMSWindowsClipboardConverter {
 public:
-	CArchAppUtil();
-	virtual ~CArchAppUtil();
-	
-	virtual bool parseArg(const int& argc, const char* const* argv, int& i);
-	virtual void adoptApp(CApp* app);
-	CApp& app() const;
-	virtual void exitApp(int code) { throw XExitApp(code); }
+	CMSWindowsClipboardFilePathConverter();
+	virtual ~CMSWindowsClipboardFilePathConverter();
 
-	static CArchAppUtil& instance();
-	static void exitAppStatic(int code) { instance().exitApp(code); }
-	virtual void beforeAppExit() {}
-	
-	CString getName();
+	// IMSWindowsClipboardConverter overrides
+	virtual IClipboard::EFormat
+						getFormat() const;
+	virtual UINT		getWin32Format() const;
+	virtual HANDLE		fromIClipboard(const CString&) const;
+	virtual CString		toIClipboard(HANDLE) const;
 
-private:
-	CApp* m_app;
-	static CArchAppUtil* s_instance;
+	
 };
+
+#endif

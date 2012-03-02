@@ -1,11 +1,11 @@
 /*
  * synergy -- mouse and keyboard sharing utility
  * Copyright (C) 2002 Chris Schoeneman, Nick Bolton, Sorin Sbarnea
- * 
+ *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * found in the file COPYING that should have accompanied this file.
- * 
+ *
  * This package is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -23,6 +23,8 @@
 #include "stdmap.h"
 #include "stdlist.h"
 #include "stdvector.h"
+#include "CArch.h"
+
 #if X_DISPLAY_MISSING
 #	error X11 is required to build synergy
 #else
@@ -324,6 +326,8 @@ private:
 	Atom				m_atomMotifClipHeader;
 	Atom				m_atomMotifClipAccess;
 	Atom				m_atomGDKSelection;
+	Atom                m_atomFilePath;
+	Atom                m_atomString;
 };
 
 //! Clipboard format converter interface

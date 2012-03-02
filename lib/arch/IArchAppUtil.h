@@ -31,4 +31,6 @@ public:
 	virtual int run(int argc, char** argv) = 0;
 	virtual void beforeAppExit() = 0;
 	virtual void startNode() = 0;
+	virtual CString getName() = 0;
+
 };
