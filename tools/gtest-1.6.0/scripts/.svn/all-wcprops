@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/scripts
+END
+gen_gtest_pred_impl.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/scripts/gen_gtest_pred_impl.py
+END
+fuse_gtest_files.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/scripts/fuse_gtest_files.py
+END
+pump.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/scripts/pump.py
+END
+gtest-config.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/scripts/gtest-config.in
+END

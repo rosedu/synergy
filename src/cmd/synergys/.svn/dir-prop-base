@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 106
+.svnignore
+config.h
+lib
+bin
+build
+CMakeCache.txt
+cmake_install.cmake
+hm.cfg
+CMakeFiles
+MakeFiles
+Makefile
+
+END

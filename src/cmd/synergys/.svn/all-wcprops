@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1083/branches/1.4/src/cmd/synergys
+END
+COSXServerTaskBarReceiver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/COSXServerTaskBarReceiver.cpp
+END
+COSXServerTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/COSXServerTaskBarReceiver.h
+END
+synergys.rc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/synergys.rc
+END
+tb_error.ico
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/tb_error.ico
+END
+CXWindowsServerTaskBarReceiver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/CXWindowsServerTaskBarReceiver.cpp
+END
+synergys.ico
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/synergys.ico
+END
+CXWindowsServerTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/CXWindowsServerTaskBarReceiver.h
+END
+tb_wait.ico
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/tb_wait.ico
+END
+tb_run.ico
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/tb_run.ico
+END
+CMSWindowsServerTaskBarReceiver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/983/branches/1.4/src/cmd/synergys/CMSWindowsServerTaskBarReceiver.cpp
+END
+synergys.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/synergys.cpp
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/.gitignore
+END
+CMSWindowsServerTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/CMSWindowsServerTaskBarReceiver.h
+END
+tb_idle.ico
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/tb_idle.ico
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1083/branches/1.4/src/cmd/synergys/CMakeLists.txt
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/cmd/synergys/resource.h
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1159/branches/1.4/tools/build
+END
+generators.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1008/branches/1.4/tools/build/generators.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1008/branches/1.4/tools/build/__init__.py
+END
+toolchain.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1159/branches/1.4/tools/build/toolchain.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/tools/build/README.txt
+END
+ftputil.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/tools/build/ftputil.py
+END

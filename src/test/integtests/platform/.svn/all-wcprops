@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1209/branches/1.4/src/test/integtests/platform
+END
+COSXClipboardTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/955/branches/1.4/src/test/integtests/platform/COSXClipboardTests.cpp
+END
+CMSWindowsClipboardTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1008/branches/1.4/src/test/integtests/platform/CMSWindowsClipboardTests.cpp
+END
+CXWindowsKeyStateTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1185/branches/1.4/src/test/integtests/platform/CXWindowsKeyStateTests.cpp
+END
+CXWindowsClipboardTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1008/branches/1.4/src/test/integtests/platform/CXWindowsClipboardTests.cpp
+END
+CXWindowsScreenTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1185/branches/1.4/src/test/integtests/platform/CXWindowsScreenTests.cpp
+END
+CXWindowsScreenSaverTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1209/branches/1.4/src/test/integtests/platform/CXWindowsScreenSaverTests.cpp
+END
+COSXKeyStateTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1050/branches/1.4/src/test/integtests/platform/COSXKeyStateTests.cpp
+END
+CMSWindowsKeyStateTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1047/branches/1.4/src/test/integtests/platform/CMSWindowsKeyStateTests.cpp
+END

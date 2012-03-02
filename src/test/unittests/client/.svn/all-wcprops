@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1208/branches/1.4/src/test/unittests/client
+END
+CServerProxyTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1208/branches/1.4/src/test/unittests/client/CServerProxyTests.cpp
+END
+CMockClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1185/branches/1.4/src/test/unittests/client/CMockClient.h
+END

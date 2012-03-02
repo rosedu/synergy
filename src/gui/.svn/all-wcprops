@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1246/branches/1.4/src/gui
+END
+qsynergy.pro
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1246/branches/1.4/src/gui/qsynergy.pro
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/955/branches/1.4/src/gui/INSTALL
+END
+object_script.synergy.Release
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1221/branches/1.4/src/gui/object_script.synergy.Release
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/955/branches/1.4/src/gui/COPYING
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/955/branches/1.4/src/gui/README
+END
+object_script.synergy.Debug
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1221/branches/1.4/src/gui/object_script.synergy.Debug
+END

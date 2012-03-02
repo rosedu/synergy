@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1044/branches/1.4/src/test/unittests/synergy
+END
+CKeyStateTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1044/branches/1.4/src/test/unittests/synergy/CKeyStateTests.cpp
+END
+CKeyStateTests.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1044/branches/1.4/src/test/unittests/synergy/CKeyStateTests.h
+END
+CClipboardTests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1008/branches/1.4/src/test/unittests/synergy/CClipboardTests.cpp
+END
+CMockKeyMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1044/branches/1.4/src/test/unittests/synergy/CMockKeyMap.h
+END
+CMockEventQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1008/branches/1.4/src/test/unittests/synergy/CMockEventQueue.h
+END

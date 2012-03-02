@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/config.h.in
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/depcomp
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/missing
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/config.guess
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/ltmain.sh
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/config.sub
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/build-aux/install-sh
+END

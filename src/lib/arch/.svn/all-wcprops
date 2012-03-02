@@ -1,0 +1,491 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1228/branches/1.4/src/lib/arch
+END
+CArchMultithreadWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchMultithreadWindows.cpp
+END
+CArchTaskBarXWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTaskBarXWindows.h
+END
+CArchSystemWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSystemWindows.cpp
+END
+CArchTimeUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTimeUnix.cpp
+END
+XArch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/XArch.cpp
+END
+CArchTaskBarWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTaskBarWindows.h
+END
+CArchSleepUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSleepUnix.cpp
+END
+CArchConsoleStd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/CArchConsoleStd.cpp
+END
+CArchConsoleWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchConsoleWindows.cpp
+END
+XArchUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/XArchUnix.h
+END
+IArchSleep.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchSleep.h
+END
+CArchSleepWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSleepWindows.cpp
+END
+CArchFileUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchFileUnix.cpp
+END
+CArch.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/CArch.h
+END
+CMultibyte.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1121/branches/1.4/src/lib/arch/CMultibyte.h
+END
+IArchTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchTaskBarReceiver.h
+END
+CArchNetworkWinsock.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchNetworkWinsock.cpp
+END
+IArchFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchFile.h
+END
+CArchTaskBarXWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTaskBarXWindows.cpp
+END
+CArchLogUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchLogUnix.h
+END
+CArchFileWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchFileWindows.h
+END
+CArchTaskBarWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTaskBarWindows.cpp
+END
+CArchMultithreadWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchMultithreadWindows.h
+END
+CArchSystemWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSystemWindows.h
+END
+CArchMultithreadPosix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchMultithreadPosix.cpp
+END
+CArchDaemonUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonUnix.cpp
+END
+XArchUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/XArchUnix.cpp
+END
+CArchConsoleUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchConsoleUnix.h
+END
+CArchMiscWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/976/branches/1.4/src/lib/arch/CArchMiscWindows.h
+END
+IArchDaemon.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchDaemon.h
+END
+XArchWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1227/branches/1.4/src/lib/arch/XArchWindows.cpp
+END
+IArchString.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1107/branches/1.4/src/lib/arch/IArchString.h
+END
+CArchStringWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1125/branches/1.4/src/lib/arch/CArchStringWindows.cpp
+END
+CArchConsoleWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchConsoleWindows.h
+END
+CArchConsoleStd.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/CArchConsoleStd.h
+END
+CArchAppUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchAppUtil.h
+END
+CArchDaemonWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonWindows.h
+END
+CArchNetworkBSD.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchNetworkBSD.h
+END
+CArchSleepWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSleepWindows.h
+END
+CArchFileUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchFileUnix.h
+END
+CArchAppUtilWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1228/branches/1.4/src/lib/arch/CArchAppUtilWindows.cpp
+END
+CArchFileWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchFileWindows.cpp
+END
+CArchNetworkWinsock.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchNetworkWinsock.h
+END
+IArchLog.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/IArchLog.h
+END
+IArchMultithread.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchMultithread.h
+END
+vsnprintf.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1125/branches/1.4/src/lib/arch/vsnprintf.h
+END
+IArchSystem.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchSystem.h
+END
+CArchLogWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchLogWindows.h
+END
+IArchTaskBar.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchTaskBar.h
+END
+CArchConsoleUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchConsoleUnix.cpp
+END
+CArchMiscWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchMiscWindows.cpp
+END
+IArchTime.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchTime.h
+END
+CArchTimeWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTimeWindows.cpp
+END
+CArchMultithreadPosix.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchMultithreadPosix.h
+END
+IArchString.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1158/branches/1.4/src/lib/arch/IArchString.cpp
+END
+CArchDaemonUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonUnix.h
+END
+IArchConsole.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/IArchConsole.h
+END
+CArchAppUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchAppUtil.cpp
+END
+CArchDaemonWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonWindows.cpp
+END
+CArchStringUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1107/branches/1.4/src/lib/arch/CArchStringUnix.h
+END
+CArchNetworkBSD.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchNetworkBSD.cpp
+END
+CArchDaemonNone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonNone.cpp
+END
+XArchWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/XArchWindows.h
+END
+CArchStringWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1107/branches/1.4/src/lib/arch/CArchStringWindows.h
+END
+CArchAppUtilUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchAppUtilUnix.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1125/branches/1.4/src/lib/arch/CMakeLists.txt
+END
+CArchLogWindows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchLogWindows.cpp
+END
+CArchSystemUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSystemUnix.h
+END
+CArchAppUtilWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchAppUtilWindows.h
+END
+IArchNetwork.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchNetwork.h
+END
+CArchTimeUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTimeUnix.h
+END
+XArch.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/XArch.h
+END
+CArchStringUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1125/branches/1.4/src/lib/arch/CArchStringUnix.cpp
+END
+CArchTimeWindows.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchTimeWindows.h
+END
+CArch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/983/branches/1.4/src/lib/arch/CArch.cpp
+END
+CArchSleepUnix.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSleepUnix.h
+END
+CArchAppUtilUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchAppUtilUnix.cpp
+END
+CArchLogUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchLogUnix.cpp
+END
+CArchDaemonNone.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchDaemonNone.h
+END
+CArchSystemUnix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/CArchSystemUnix.cpp
+END
+IArchAppUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/arch/IArchAppUtil.h
+END

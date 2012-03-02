@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1246/branches/1.4/src/gui/res
+END
+AboutDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/gui/res/AboutDialogBase.ui
+END
+MainWindowBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1221/branches/1.4/src/gui/res/MainWindowBase.ui
+END
+ServerConfigDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/955/branches/1.4/src/gui/res/ServerConfigDialogBase.ui
+END
+ActionDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/res/ActionDialogBase.ui
+END
+Synergy.qrc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1135/branches/1.4/src/gui/res/Synergy.qrc
+END
+WindowsServicesBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/gui/res/WindowsServicesBase.ui
+END
+ScreenSettingsDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/955/branches/1.4/src/gui/res/ScreenSettingsDialogBase.ui
+END
+SettingsDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1161/branches/1.4/src/gui/res/SettingsDialogBase.ui
+END
+HotkeyDialogBase.ui
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/res/HotkeyDialogBase.ui
+END

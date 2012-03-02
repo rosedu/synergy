@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear
+END
+gtest_all.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest_all.cc
+END
+gtest_unittest.cbproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest_unittest.cbproj
+END
+gtest.cbproj
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest.cbproj
+END
+gtest_link.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest_link.cc
+END
+gtest_main.cbproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest_main.cbproj
+END
+gtest.groupproj
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/codegear/gtest.groupproj
+END

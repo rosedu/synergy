@@ -1,0 +1,317 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1234/branches/1.4/src/lib/synergy
+END
+CKeyMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1044/branches/1.4/src/lib/synergy/CKeyMap.h
+END
+CKeyState.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1044/branches/1.4/src/lib/synergy/CKeyState.h
+END
+OptionTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1206/branches/1.4/src/lib/synergy/OptionTypes.h
+END
+CProtocolUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CProtocolUtil.cpp
+END
+CClipboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CClipboard.cpp
+END
+Global.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1044/branches/1.4/src/lib/synergy/Global.h
+END
+ISecondaryScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1213/branches/1.4/src/lib/synergy/ISecondaryScreen.h
+END
+CServerTaskBarReceiver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CServerTaskBarReceiver.cpp
+END
+IKeyState.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1044/branches/1.4/src/lib/synergy/IKeyState.h
+END
+IClipboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/IClipboard.cpp
+END
+CServerApp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1224/branches/1.4/src/lib/synergy/CServerApp.cpp
+END
+XScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1083/branches/1.4/src/lib/synergy/XScreen.h
+END
+MouseTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/MouseTypes.h
+END
+KeyTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1206/branches/1.4/src/lib/synergy/KeyTypes.h
+END
+CScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1078/branches/1.4/src/lib/synergy/CScreen.cpp
+END
+CClientTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CClientTaskBarReceiver.h
+END
+GameDeviceTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1069/branches/1.4/src/lib/synergy/GameDeviceTypes.h
+END
+CClientApp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1062/branches/1.4/src/lib/synergy/CClientApp.h
+END
+XSynergy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/XSynergy.cpp
+END
+CApp.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1232/branches/1.4/src/lib/synergy/CApp.h
+END
+IScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1008/branches/1.4/src/lib/synergy/IScreen.cpp
+END
+CKeyMap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1206/branches/1.4/src/lib/synergy/CKeyMap.cpp
+END
+ClipboardTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/ClipboardTypes.h
+END
+ProtocolTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1073/branches/1.4/src/lib/synergy/ProtocolTypes.h
+END
+CKeyState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1044/branches/1.4/src/lib/synergy/CKeyState.cpp
+END
+CPlatformScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1213/branches/1.4/src/lib/synergy/CPlatformScreen.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1072/branches/1.4/src/lib/synergy/CMakeLists.txt
+END
+IScreenSaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/IScreenSaver.h
+END
+ISecondaryScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1078/branches/1.4/src/lib/synergy/ISecondaryScreen.cpp
+END
+IPrimaryScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1078/branches/1.4/src/lib/synergy/IPrimaryScreen.h
+END
+CPacketStreamFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CPacketStreamFilter.h
+END
+IKeyState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1008/branches/1.4/src/lib/synergy/IKeyState.cpp
+END
+IPlatformScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1213/branches/1.4/src/lib/synergy/IPlatformScreen.h
+END
+INode.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/INode.h
+END
+XScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1083/branches/1.4/src/lib/synergy/XScreen.cpp
+END
+CClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CClipboard.h
+END
+CProtocolUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CProtocolUtil.h
+END
+CServerTaskBarReceiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CServerTaskBarReceiver.h
+END
+KeyTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/KeyTypes.cpp
+END
+IClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1107/branches/1.4/src/lib/synergy/IClipboard.h
+END
+CClientTaskBarReceiver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CClientTaskBarReceiver.cpp
+END
+CServerApp.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CServerApp.h
+END
+CClientApp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1221/branches/1.4/src/lib/synergy/CClientApp.cpp
+END
+CApp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1234/branches/1.4/src/lib/synergy/CApp.cpp
+END
+ProtocolTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1073/branches/1.4/src/lib/synergy/ProtocolTypes.cpp
+END
+CPlatformScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1185/branches/1.4/src/lib/synergy/CPlatformScreen.cpp
+END
+CScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1078/branches/1.4/src/lib/synergy/CScreen.h
+END
+IClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1072/branches/1.4/src/lib/synergy/IClient.h
+END
+CPacketStreamFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/CPacketStreamFilter.cpp
+END
+IPrimaryScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1072/branches/1.4/src/lib/synergy/IPrimaryScreen.cpp
+END
+IScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/IScreen.h
+END
+XSynergy.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/synergy/XSynergy.h
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/xcode/Scripts
+END
+runtests.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/xcode/Scripts/runtests.sh
+END
+versiongenerate.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/xcode/Scripts/versiongenerate.py
+END

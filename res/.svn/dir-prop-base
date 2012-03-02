@@ -1,0 +1,25 @@
+K 16
+bugtraq:logregex
+V 39
+[Ii]ssues?:?(\s*(,|and)?\s*#\d+)+
+(\d+)
+K 11
+bugtraq:url
+V 61
+http://code.google.com/p/synrgy-plus/issues/detail?id=%BUGID%
+K 10
+svn:ignore
+V 106
+.svnignore
+config.h
+lib
+bin
+build
+CMakeCache.txt
+cmake_install.cmake
+hm.cfg
+CMakeFiles
+MakeFiles
+Makefile
+
+END

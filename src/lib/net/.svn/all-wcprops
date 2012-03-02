@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1008/branches/1.4/src/lib/net
+END
+ISocketFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/net/ISocketFactory.h
+END
+CTCPSocketFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPSocketFactory.h
+END
+IDataSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/net/IDataSocket.h
+END
+ISocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1008/branches/1.4/src/lib/net/ISocket.cpp
+END
+CNetworkAddress.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CNetworkAddress.cpp
+END
+CTCPSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPSocket.cpp
+END
+ISocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/955/branches/1.4/src/lib/net/ISocket.h
+END
+CTCPSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPSocket.h
+END
+CNetworkAddress.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CNetworkAddress.h
+END
+TSocketMultiplexerMethodJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/955/branches/1.4/src/lib/net/TSocketMultiplexerMethodJob.h
+END
+XSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/955/branches/1.4/src/lib/net/XSocket.cpp
+END
+IListenSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1008/branches/1.4/src/lib/net/IListenSocket.cpp
+END
+CTCPListenSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPListenSocket.cpp
+END
+XSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/955/branches/1.4/src/lib/net/XSocket.h
+END
+IListenSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/net/IListenSocket.h
+END
+CSocketMultiplexer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CSocketMultiplexer.cpp
+END
+CTCPListenSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPListenSocket.h
+END
+CTCPSocketFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CTCPSocketFactory.cpp
+END
+CSocketMultiplexer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CSocketMultiplexer.h
+END
+IDataSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1008/branches/1.4/src/lib/net/IDataSocket.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/net/CMakeLists.txt
+END
+ISocketMultiplexerJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/net/ISocketMultiplexerJob.h
+END

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1226/branches/1.4/src/lib/server
+END
+CClientProxyUnknown.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1185/branches/1.4/src/lib/server/CClientProxyUnknown.cpp
+END
+CClientProxyUnknown.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientProxyUnknown.h
+END
+CInputFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1008/branches/1.4/src/lib/server/CInputFilter.cpp
+END
+CConfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1206/branches/1.4/src/lib/server/CConfig.cpp
+END
+CServer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1226/branches/1.4/src/lib/server/CServer.cpp
+END
+CInputFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CInputFilter.h
+END
+CConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CConfig.h
+END
+CBaseClientProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CBaseClientProxy.cpp
+END
+CServer.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1078/branches/1.4/src/lib/server/CServer.h
+END
+CClientProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientProxy.cpp
+END
+CClientProxy1_0.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1185/branches/1.4/src/lib/server/CClientProxy1_0.cpp
+END
+CBaseClientProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CBaseClientProxy.h
+END
+CClientProxy1_1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_1.cpp
+END
+CClientProxy1_2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_2.cpp
+END
+CPrimaryClient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CPrimaryClient.cpp
+END
+CClientProxy1_3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_3.cpp
+END
+CClientListener.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientListener.cpp
+END
+CClientProxy1_4.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1078/branches/1.4/src/lib/server/CClientProxy1_4.cpp
+END
+CClientProxy1_0.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientProxy1_0.h
+END
+CClientProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientProxy.h
+END
+CClientProxy1_1.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_1.h
+END
+CClientProxy1_2.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_2.h
+END
+CPrimaryClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CPrimaryClient.h
+END
+CClientProxy1_3.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/server/CClientProxy1_3.h
+END
+CClientProxy1_4.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientProxy1_4.h
+END
+CClientListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1072/branches/1.4/src/lib/server/CClientListener.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1083/branches/1.4/src/lib/server/CMakeLists.txt
+END

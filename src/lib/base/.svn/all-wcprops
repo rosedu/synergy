@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1221/branches/1.4/src/lib/base
+END
+CPriorityQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CPriorityQueue.h
+END
+IEventQueue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/base/IEventQueue.cpp
+END
+LogOutputters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/983/branches/1.4/src/lib/base/LogOutputters.cpp
+END
+CSimpleEventQueueBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CSimpleEventQueueBuffer.h
+END
+TMethodEventJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/lib/base/TMethodEventJob.h
+END
+XBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/lib/base/XBase.h
+END
+CStringUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1107/branches/1.4/src/lib/base/CStringUtil.h
+END
+CStopwatch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CStopwatch.cpp
+END
+CEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1008/branches/1.4/src/lib/base/CEvent.cpp
+END
+CLog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1221/branches/1.4/src/lib/base/CLog.cpp
+END
+CFunctionEventJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CFunctionEventJob.cpp
+END
+CFunctionJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CFunctionJob.h
+END
+IEventJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/lib/base/IEventJob.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/983/branches/1.4/src/lib/base/CMakeLists.txt
+END
+CSimpleEventQueueBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CSimpleEventQueueBuffer.cpp
+END
+CEventQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CEventQueue.h
+END
+IEventQueueBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/base/IEventQueueBuffer.h
+END
+CUnicode.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CUnicode.h
+END
+XBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/lib/base/XBase.cpp
+END
+TMethodJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/base/TMethodJob.h
+END
+IEventQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1107/branches/1.4/src/lib/base/IEventQueue.h
+END
+LogOutputters.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/base/LogOutputters.h
+END
+CStringUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CStringUtil.cpp
+END
+CString.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CString.h
+END
+ELevel.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/983/branches/1.4/src/lib/base/ELevel.h
+END
+CFunctionJob.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CFunctionJob.cpp
+END
+CStopwatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CStopwatch.h
+END
+IJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/955/branches/1.4/src/lib/base/IJob.h
+END
+CEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1108/branches/1.4/src/lib/base/CEvent.h
+END
+CUnicode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CUnicode.cpp
+END
+CEventQueue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CEventQueue.cpp
+END
+CLog.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/983/branches/1.4/src/lib/base/CLog.h
+END
+CFunctionEventJob.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/base/CFunctionEventJob.h
+END
+ILogOutputter.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/983/branches/1.4/src/lib/base/ILogOutputter.h
+END

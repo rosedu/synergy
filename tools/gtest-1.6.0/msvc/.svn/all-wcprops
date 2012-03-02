@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc
+END
+gtest-md.sln
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest-md.sln
+END
+gtest.sln
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest.sln
+END
+gtest_unittest-md.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_unittest-md.vcproj
+END
+gtest-md.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest-md.vcproj
+END
+gtest_unittest.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_unittest.vcproj
+END
+gtest.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest.vcproj
+END
+gtest_prod_test-md.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_prod_test-md.vcproj
+END
+gtest_main-md.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_main-md.vcproj
+END
+gtest_prod_test.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_prod_test.vcproj
+END
+gtest_main.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/970/branches/1.4/tools/gtest-1.6.0/msvc/gtest_main.vcproj
+END

@@ -1,0 +1,509 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1228/branches/1.4/src/lib/platform
+END
+COSXClipboardTextConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardTextConverter.h
+END
+CMSWindowsClipboardUTF16Converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardUTF16Converter.h
+END
+HookDLL.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1081/branches/1.4/src/lib/platform/HookDLL.h
+END
+CMSWindowsScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1213/branches/1.4/src/lib/platform/CMSWindowsScreen.h
+END
+CMSWindowsScreenSaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsScreenSaver.h
+END
+CXWindowsClipboardUTF8Converter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardUTF8Converter.cpp
+END
+COSXClipboardAnyTextConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardAnyTextConverter.h
+END
+CXWindowsClipboardAnyBitmapConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardAnyBitmapConverter.h
+END
+CXWindowsClipboardTextConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardTextConverter.h
+END
+CXWindowsClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboard.h
+END
+CMSWindowsKeyState.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1044/branches/1.4/src/lib/platform/CMSWindowsKeyState.h
+END
+COSXScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1228/branches/1.4/src/lib/platform/COSXScreen.cpp
+END
+XInputHook.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1091/branches/1.4/src/lib/platform/XInputHook.h
+END
+COSXClipboardUTF16Converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardUTF16Converter.h
+END
+OSXScreenSaverControl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/OSXScreenSaverControl.h
+END
+COSXScreenSaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXScreenSaver.h
+END
+CMSWindowsClipboardAnyTextConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardAnyTextConverter.cpp
+END
+CXWindowsUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1203/branches/1.4/src/lib/platform/CXWindowsUtil.cpp
+END
+CSynergyHook.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CSynergyHook.cpp
+END
+CXWindowsScreenSaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1185/branches/1.4/src/lib/platform/CXWindowsScreenSaver.cpp
+END
+COSXClipboardTextConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardTextConverter.cpp
+END
+CXWindowsClipboardUCS2Converter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardUCS2Converter.cpp
+END
+CMSWindowsHookLibraryLoader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1221/branches/1.4/src/lib/platform/CMSWindowsHookLibraryLoader.cpp
+END
+CMSWindowsClipboardHTMLConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1179/branches/1.4/src/lib/platform/CMSWindowsClipboardHTMLConverter.cpp
+END
+CMSWindowsClipboardUTF16Converter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardUTF16Converter.cpp
+END
+CXWindowsEventQueueBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsEventQueueBuffer.h
+END
+CMSWindowsScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1224/branches/1.4/src/lib/platform/CMSWindowsScreen.cpp
+END
+XInput13.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1091/branches/1.4/src/lib/platform/XInput13.h
+END
+COSXClipboardAnyTextConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardAnyTextConverter.cpp
+END
+CXWindowsClipboardBMPConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardBMPConverter.h
+END
+COSXClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboard.h
+END
+CXWindowsClipboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/992/branches/1.4/src/lib/platform/CXWindowsClipboard.cpp
+END
+CMSWindowsRelauncher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1173/branches/1.4/src/lib/platform/CMSWindowsRelauncher.cpp
+END
+CMSWindowsClipboardFacade.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/970/branches/1.4/src/lib/platform/CMSWindowsClipboardFacade.h
+END
+CMSWindowsKeyState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1176/branches/1.4/src/lib/platform/CMSWindowsKeyState.cpp
+END
+CXWindowsClipboardUTF8Converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardUTF8Converter.h
+END
+CMSWindowsClipboardTextConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardTextConverter.cpp
+END
+IMSWindowsClipboardFacade.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/970/branches/1.4/src/lib/platform/IMSWindowsClipboardFacade.h
+END
+COSXScreenSaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXScreenSaver.cpp
+END
+COSXScreenSaverUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXScreenSaverUtil.h
+END
+COSXScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1213/branches/1.4/src/lib/platform/COSXScreen.h
+END
+COSXScreenSaverUtil.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXScreenSaverUtil.m
+END
+CMSWindowsClipboardAnyTextConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardAnyTextConverter.h
+END
+CSynergyHook.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CSynergyHook.h
+END
+CXWindowsScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1213/branches/1.4/src/lib/platform/CXWindowsScreen.h
+END
+CXWindowsScreenSaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1185/branches/1.4/src/lib/platform/CXWindowsScreenSaver.h
+END
+CMSWindowsEventQueueBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsEventQueueBuffer.cpp
+END
+CXWindowsClipboardUCS2Converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardUCS2Converter.h
+END
+CMSWindowsHookLibraryLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1044/branches/1.4/src/lib/platform/CMSWindowsHookLibraryLoader.h
+END
+CMSWindowsClipboardHTMLConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardHTMLConverter.h
+END
+CMSWindowsUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsUtil.h
+END
+CMSWindowsClipboardFacade.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/970/branches/1.4/src/lib/platform/CMSWindowsClipboardFacade.cpp
+END
+XInputProxy13.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1091/branches/1.4/src/lib/platform/XInputProxy13.h
+END
+CMSWindowsClipboardBitmapConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardBitmapConverter.cpp
+END
+CXWindowsKeyState.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1044/branches/1.4/src/lib/platform/CXWindowsKeyState.h
+END
+CMSWindowsRelauncher.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsRelauncher.h
+END
+CMSWindowsClipboardTextConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardTextConverter.h
+END
+CXWindowsClipboardHTMLConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardHTMLConverter.cpp
+END
+CMSWindowsClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/970/branches/1.4/src/lib/platform/CMSWindowsClipboard.h
+END
+COSXEventQueueBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXEventQueueBuffer.h
+END
+CXWindowsScreen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1228/branches/1.4/src/lib/platform/CXWindowsScreen.cpp
+END
+COSXKeyState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1210/branches/1.4/src/lib/platform/COSXKeyState.cpp
+END
+CMSWindowsUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsUtil.cpp
+END
+HookDLL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1224/branches/1.4/src/lib/platform/HookDLL.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1157/branches/1.4/src/lib/platform/CMakeLists.txt
+END
+CMSWindowsDesks.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1213/branches/1.4/src/lib/platform/CMSWindowsDesks.h
+END
+XInputProxy13.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1091/branches/1.4/src/lib/platform/XInputProxy13.cpp
+END
+CMSWindowsScreenSaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsScreenSaver.cpp
+END
+CXWindowsKeyState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1044/branches/1.4/src/lib/platform/CXWindowsKeyState.cpp
+END
+CXWindowsClipboardAnyBitmapConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardAnyBitmapConverter.cpp
+END
+CXWindowsClipboardTextConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardTextConverter.cpp
+END
+CMSWindowsEventQueueBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsEventQueueBuffer.h
+END
+CMSWindowsClipboardBitmapConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CMSWindowsClipboardBitmapConverter.h
+END
+XInputHook.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1091/branches/1.4/src/lib/platform/XInputHook.cpp
+END
+COSXClipboardUTF16Converter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXClipboardUTF16Converter.cpp
+END
+COSXEventQueueBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/COSXEventQueueBuffer.cpp
+END
+CMSWindowsClipboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/970/branches/1.4/src/lib/platform/CMSWindowsClipboard.cpp
+END
+CXWindowsEventQueueBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1157/branches/1.4/src/lib/platform/CXWindowsEventQueueBuffer.cpp
+END
+CXWindowsClipboardHTMLConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardHTMLConverter.h
+END
+CMSWindowsDesks.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1213/branches/1.4/src/lib/platform/CMSWindowsDesks.cpp
+END
+CXWindowsUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsUtil.h
+END
+COSXKeyState.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1044/branches/1.4/src/lib/platform/COSXKeyState.h
+END
+COSXClipboard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1224/branches/1.4/src/lib/platform/COSXClipboard.cpp
+END
+CXWindowsClipboardBMPConverter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/955/branches/1.4/src/lib/platform/CXWindowsClipboardBMPConverter.cpp
+END

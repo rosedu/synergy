@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/1174/branches/1.4/res
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1174/branches/1.4/res/config.h.in
+END
+doxygen.cfg.in
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1107/branches/1.4/res/doxygen.cfg.in
+END
+License.tex
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/955/branches/1.4/res/License.tex
+END
+synergy.desktop
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1149/branches/1.4/res/synergy.desktop
+END
+synergy.ico
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/955/branches/1.4/res/synergy.ico
+END
+Installer.nsi.in
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1148/branches/1.4/res/Installer.nsi.in
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/955/branches/1.4/res/Readme.txt
+END
+License.rtf
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/955/branches/1.4/res/License.rtf
+END
+DefineIfExist.nsh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1093/branches/1.4/res/DefineIfExist.nsh
+END

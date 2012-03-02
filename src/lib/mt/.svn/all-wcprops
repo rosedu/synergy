@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1107/branches/1.4/src/lib/mt
+END
+CThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CThread.h
+END
+CCondVar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CCondVar.cpp
+END
+CLock.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CLock.h
+END
+XThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/XThread.h
+END
+CCondVar.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1107/branches/1.4/src/lib/mt/CCondVar.h
+END
+CMutex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CMutex.cpp
+END
+XMT.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/XMT.cpp
+END
+CThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CThread.cpp
+END
+CMutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CMutex.h
+END
+CLock.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CLock.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/CMakeLists.txt
+END
+XMT.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/955/branches/1.4/src/lib/mt/XMT.h
+END

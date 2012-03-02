@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1246/branches/1.4/src/gui/src
+END
+WindowsServices.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1221/branches/1.4/src/gui/src/WindowsServices.cpp
+END
+AboutDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/gui/src/AboutDialog.h
+END
+ScreenSetupView.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSetupView.h
+END
+ActionDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ActionDialog.h
+END
+Hotkey.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Hotkey.cpp
+END
+BaseConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/955/branches/1.4/src/gui/src/BaseConfig.h
+END
+QSynergyApplication.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/gui/src/QSynergyApplication.h
+END
+AppConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1166/branches/1.4/src/gui/src/AppConfig.h
+END
+ServerConfigDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ServerConfigDialog.cpp
+END
+Action.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Action.cpp
+END
+Screen.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Screen.cpp
+END
+ScreenSettingsDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSettingsDialog.cpp
+END
+MainWindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1227/branches/1.4/src/gui/src/MainWindow.h
+END
+HotkeyDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/gui/src/HotkeyDialog.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1246/branches/1.4/src/gui/src/main.cpp
+END
+SettingsDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1136/branches/1.4/src/gui/src/SettingsDialog.h
+END
+KeySequenceWidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/gui/src/KeySequenceWidget.cpp
+END
+TrashScreenWidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/955/branches/1.4/src/gui/src/TrashScreenWidget.cpp
+END
+ScreenSetupModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSetupModel.h
+END
+KeySequence.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/955/branches/1.4/src/gui/src/KeySequence.h
+END
+AboutDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1136/branches/1.4/src/gui/src/AboutDialog.cpp
+END
+ScreenSetupView.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSetupView.cpp
+END
+ActionDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ActionDialog.cpp
+END
+BaseConfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/gui/src/BaseConfig.cpp
+END
+ServerConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ServerConfig.h
+END
+NewScreenWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/955/branches/1.4/src/gui/src/NewScreenWidget.h
+END
+WindowsServices.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1221/branches/1.4/src/gui/src/WindowsServices.h
+END
+QSynergyApplication.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/955/branches/1.4/src/gui/src/QSynergyApplication.cpp
+END
+AppConfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1168/branches/1.4/src/gui/src/AppConfig.cpp
+END
+Hotkey.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Hotkey.h
+END
+MainWindow.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1233/branches/1.4/src/gui/src/MainWindow.cpp
+END
+SettingsDialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1162/branches/1.4/src/gui/src/SettingsDialog.cpp
+END
+ServerConfigDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ServerConfigDialog.h
+END
+ScreenSetupModel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSetupModel.cpp
+END
+KeySequence.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1162/branches/1.4/src/gui/src/KeySequence.cpp
+END
+Action.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Action.h
+END
+Screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/955/branches/1.4/src/gui/src/Screen.h
+END
+ScreenSettingsDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ScreenSettingsDialog.h
+END
+HotkeyDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/955/branches/1.4/src/gui/src/HotkeyDialog.h
+END
+KeySequenceWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/src/KeySequenceWidget.h
+END
+TrashScreenWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/src/TrashScreenWidget.h
+END
+ServerConfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/955/branches/1.4/src/gui/src/ServerConfig.cpp
+END
+NewScreenWidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/955/branches/1.4/src/gui/src/NewScreenWidget.cpp
+END

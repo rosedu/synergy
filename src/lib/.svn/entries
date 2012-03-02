@@ -1,0 +1,92 @@
+10
+
+dir
+1246
+http://synergy-plus.googlecode.com/svn/branches/1.4/src/lib
+http://synergy-plus.googlecode.com/svn
+
+
+
+2012-02-05T21:30:44.499278Z
+1234
+nick.bolton.uk
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+33c40d52-04ba-11de-a43f-ff96a2b7a9af
+
+synergy
+dir
+
+mt
+dir
+
+platform
+dir
+
+server
+dir
+
+net
+dir
+
+io
+dir
+
+common
+dir
+
+base
+dir
+
+arch
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2012-03-02T16:46:39.549814Z
+ac71ce3e09de95c25b37e02f144daa98
+2011-05-03T13:02:23.933263Z
+955
+nick.bolton.uk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+937
+
+client
+dir
+
